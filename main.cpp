@@ -1,10 +1,14 @@
 #include <iostream>
+#include <chrono>
 #include "tree.h"
 #include "sort.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
+using Clock = std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::milliseconds;
 
 // Protótipos de funções
 void printMenu();
@@ -22,6 +26,9 @@ int main()
         int iOption;
         cout << "Escolha uma opção: ";
         cin >> iOption;
+
+        // Registra tempo de execução
+        auto timeStart = Clock::now();
 
         // Executa a opção escolhida
         switch (iOption) {
@@ -82,6 +89,12 @@ int main()
                 // Pula para o início do loop
                 continue;
         }
+        // Calcula tempo de execução
+        auto timeEnd = Clock::now();
+        auto timeDiff = duration_cast<milliseconds>(timeEnd - timeStart);
+
+        // Exibe tempo de execução
+        cout << "Tempo de execução: " << timeDiff.count() << " ms" << endl << endl;
     }
     return 0;
 }
