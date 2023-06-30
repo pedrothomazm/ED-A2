@@ -1,202 +1,185 @@
 #include "tree.h"
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 // Função para criar um novo nó da árvore
-TreeNode* CreateNode(int pData)
+TreeNode* createNode(int idata)
 {
-    TreeNode* pNewNode = new TreeNode;
-    pNewNode->data = pData;
-    pNewNode->left = nullptr;
-    pNewNode->right = nullptr;
-    return pNewNode;
+    TreeNode* ptrNewNode = (TreeNode*)malloc(sizeof(TreeNode));
+    ptrNewNode->idata = idata;
+    ptrNewNode->ptrLeft = nullptr;
+    ptrNewNode->ptrRight = nullptr;
+    return ptrNewNode;
 }
 
 // Função para inserir um nó na árvore
-TreeNode* InsertNode(TreeNode* pRoot, int pData)
+TreeNode* insertNode(TreeNode* ptrRoot, int idata)
 {
-    if (pRoot == nullptr)
+    if (ptrRoot == nullptr)
     {
-        return CreateNode(pData); // Se a árvore estiver vazia, cria um novo nó com o valor fornecido
+        return createNode(idata); // Se a árvore estiver vazia, cria um novo nó com o valor fornecido
     }
     
-    if (pData < pRoot->data) 
+    if (idata < ptrRoot->idata) 
     {
-        pRoot->left = InsertNode(pRoot->left, pData); // Se o valor é menor que o valor do nó atual, insere na subárvore esquerda
+        ptrRoot->ptrLeft = insertNode(ptrRoot->ptrLeft, idata); // Se o valor é menor que o valor do nó atual, insere na subárvore esquerda
     } 
-    else if (pData > pRoot->data) 
+    else if (idata > ptrRoot->idata) 
     {
-        pRoot->right = InsertNode(pRoot->right, pData); // Se o valor é maior que o valor do nó atual, insere na subárvore direita
+        ptrRoot->ptrRight = insertNode(ptrRoot->ptrRight, idata); // Se o valor é maior que o valor do nó atual, insere na subárvore direita
     }
 
-    return pRoot; // Retorna a raiz da árvore modificada
+    return ptrRoot; // Retorna a raiz da árvore modificada
 }
 
 // Função para construir uma árvore a partir de entrada do usuário
-TreeNode* BuildTreeFromUserInput()
+TreeNode* buildTreeFromUserInput()
 {
-    int data;
-    TreeNode* pRoot = nullptr;
+    int idata;
+    TreeNode* ptrRoot = nullptr;
 
     cout << "Digite os números separados por espaço (ou -1 para finalizar): ";
-    while (cin >> data && data != -1) 
+    while (cin >> idata && idata != -1) 
     {
-        pRoot = InsertNode(pRoot, data); // Insere cada número na árvore utilizando a função InsertNode
+        ptrRoot = insertNode(ptrRoot, idata); // Insere cada número na árvore utilizando a função insertNode
     }
 
-    return pRoot; // Retorna a raiz da árvore construída
+    return ptrRoot; // Retorna a raiz da árvore construída
 }
 
 // Função para obter a altura da árvore
-int GetHeight(TreeNode* pRoot) 
+int getHeight(TreeNode* ptrRoot) 
 {
-    if (pRoot == nullptr)
+    if (ptrRoot == nullptr)
     {
         return 0; // Retorna 0 se a árvore estiver vazia (raiz nula)
     }
 
-    int leftHeight = GetHeight(pRoot->left); // Obtém a altura da subárvore esquerda
-    int rightHeight = GetHeight(pRoot->right); // Obtém a altura da subárvore direita
+    int iLeftHeight = getHeight(ptrRoot->ptrLeft); // Obtém a altura da subárvore esquerda
+    int iRightHeight = getHeight(ptrRoot->ptrRight); // Obtém a altura da subárvore direita
     
-    int treeHeight = 1 + max(leftHeight, rightHeight); // A altura da árvore é o máximo entre as alturas das subárvores esquerda e direita, mais 1
+    int iTreeHeight = 1 + max(iLeftHeight, iRightHeight); // A altura da árvore é o máximo entre as alturas das subárvores esquerda e direita, mais 1
     
-    return treeHeight; // Retorna a altura da árvore
+    return iTreeHeight; // Retorna a altura da árvore
 }
 
 // Função para obter o tamanho da árvore (número de nós)
-int GetSize(TreeNode* pRoot) 
+int getSize(TreeNode* ptrRoot) 
 {
-    if (pRoot == nullptr) 
+    if (ptrRoot == nullptr) 
     {
         return 0; // Retorna 0 se a árvore estiver vazia
     }
 
-    int size = 1; // Inicia o tamanho com 1 para contar o nó atual
+    int iSize = 1; // Inicia o tamanho com 1 para contar o nó atual
 
-    if (pRoot->left != nullptr)
+    if (ptrRoot->ptrLeft != nullptr)
     {
-        size += GetSize(pRoot->left); // Chama recursivamente a função para obter o tamanho da subárvore esquerda e adiciona ao tamanho total
+        iSize += getSize(ptrRoot->ptrLeft); // Chama recursivamente a função para obter o tamanho da subárvore esquerda e adiciona ao tamanho total
     }
 
-    if (pRoot->right != nullptr)
+    if (ptrRoot->ptrRight != nullptr)
     {
-        size += GetSize(pRoot->right); // Chama recursivamente a função para obter o tamanho da subárvore direita e adiciona ao tamanho total
+        iSize += getSize(ptrRoot->ptrRight); // Chama recursivamente a função para obter o tamanho da subárvore direita e adiciona ao tamanho total
     }
 
-    return size; // Retorna o tamanho total da árvore
+    return iSize; // Retorna o tamanho da árvore
 }
 
+
 // Função para inserir um elemento na árvore
-void InsertElement(TreeNode*& pRoot, int data) 
+void insertElement(TreeNode*& ptrRoot, int idata) 
 {
-    // Verifica de a raiz atual é nula 
-    if (pRoot == nullptr) 
+    // Verifica se a raiz atual é nula 
+    if (ptrRoot == nullptr) 
     {
-        pRoot = CreateNode(data); // Cria um novo nó com o valor especificado e o torna a raiz da árvore
+        ptrRoot = createNode(idata); // Cria um novo nó com o valor especificado e o torna a raiz da árvore
     } 
-    else if (data < pRoot->data)
+    else if (idata < ptrRoot->idata)
     {
-        InsertElement(pRoot->left, data); // Desce na subárvore esquerda e chama a função recursivamente para inserir o elemento
+        insertElement(ptrRoot->ptrLeft, idata); // Desce na subárvore esquerda e chama a função recursivamente para inserir o elemento
     } 
-    else if (data > pRoot->data)
+    else if (idata > ptrRoot->idata)
     {
-        InsertElement(pRoot->right, data); // Desce na subárvore direita e chama a função recursivamente para inserir o elemento
+        insertElement(ptrRoot->ptrRight, idata); // Desce na subárvore direita e chama a função recursivamente para inserir o elemento
     }
 }
 
 // Função para encontrar o nó com o valor mínimo em uma árvore binária de busca
-TreeNode* FindMin(TreeNode* pNode)
+TreeNode* findMin(TreeNode* ptrNode)
 {
-    while (pNode->left != nullptr)
+    while (ptrNode->ptrLeft != nullptr)
     {
-        pNode = pNode->left; // Continua descendo na subárvore esquerda até encontrar o nó com valor mínimo
+        ptrNode = ptrNode->ptrLeft; // Continua descendo na subárvore esquerda até encontrar o nó com valor mínimo
     }
     
-    return pNode; // Retorna o nó com valor mínimo
+    return ptrNode; // Retorna o nó com valor mínimo
 }
 
 // Função para remover um elemento específico da árvore
-TreeNode* RemoveNode(TreeNode* pRoot, int data)
+TreeNode* removeNode(TreeNode* ptrRoot, int idata)
 {
-    if (pRoot == nullptr) 
+    if (ptrRoot == nullptr) 
     {
         return nullptr;
     }
-    else if (data < pRoot->data)
+    else if (idata < ptrRoot->idata)
     {
-        pRoot->left = RemoveNode(pRoot->left, data); // Se o valor a ser removido for menor, continua na subárvore esquerda
+        ptrRoot->ptrLeft = removeNode(ptrRoot->ptrLeft, idata); // Se o valor a ser removido for menor, continua na subárvore esquerda
     }
-    else if (data > pRoot->data)
+    else if (idata > ptrRoot->idata)
     {
-        pRoot->right = RemoveNode(pRoot->right, data); // Se o valor a ser removido for maior, continua na subárvore direita
+        ptrRoot->ptrRight = removeNode(ptrRoot->ptrRight, idata); // Se o valor a ser removido for maior, continua na subárvore direita
     } 
     else 
     {
         // Encontrou o nó a ser removido
 
-        if (pRoot->left == nullptr && pRoot->right == nullptr)
+        if (ptrRoot->ptrLeft == nullptr && ptrRoot->ptrRight == nullptr)
         {
             // Caso 1: O nó não tem filhos
-            delete pRoot; // Libera memória
-            pRoot = nullptr;
+            free(ptrRoot); // Libera memória
+            ptrRoot = nullptr;
         } 
-        else if (pRoot->left == nullptr) 
+        else if (ptrRoot->ptrLeft == nullptr) 
         {
             // Caso 2: O nó tem apenas um filho à direita
-            TreeNode* pTemp = pRoot;
-            pRoot = pRoot->right; // Atualiza o ponteiro do pai para apontar para o filho à direita
-            delete pTemp; // Libera memória
+            TreeNode* ptrTemp = ptrRoot;
+            ptrRoot = ptrRoot->ptrRight; // Atualiza o ponteiro do pai para apontar para o filho à direita
+            free(ptrTemp); // Libera memória
         } 
-        else if (pRoot->right == nullptr)
+        else if (ptrRoot->ptrRight == nullptr)
         {
             // Caso 2: O nó tem apenas um filho à esquerda
-            TreeNode* pTemp = pRoot;
-            pRoot = pRoot->left; // Atualiza o ponteiro do pai para apontar para o filho à esquerda
-            delete pTemp; // Libera memória
+            TreeNode* ptrTemp = ptrRoot;
+            ptrRoot = ptrRoot->ptrLeft; // Atualiza o ponteiro do pai para apontar para o filho à esquerda
+            free(ptrTemp); // Libera memória
         } 
         else 
         {
             // Caso 3: O nó tem dois filhos
-            TreeNode* pTemp = FindMin(pRoot->right); // Encontra o nó com o valor mínimo na subárvore direita
-            pRoot->data = pTemp->data; // Copia o valor mínimo para o nó atual
-            pRoot->right = RemoveNode(pRoot->right, pTemp->data); // Remove o nó com o valor mínimo da subárvore direita
+            TreeNode* ptrTemp = findMin(ptrRoot->ptrRight); // Encontra o nó com o valor mínimo na subárvore direita
+            ptrRoot->idata = ptrTemp->idata; // Copia o valor mínimo para o nó atual
+            ptrRoot->ptrRight = removeNode(ptrRoot->ptrRight, ptrTemp->idata); // Remove o nó com o valor mínimo da subárvore direita
         }
     }
     
-    return pRoot; // Retorna a raiz atualizada
+    return ptrRoot; // Retorna a raiz atualizada
 }
 
-void DeleteTree(TreeNode*& ptrRoot)
-{
-    // Se a árvore estiver vazia, não faz nada
-    if (ptrRoot == nullptr)
-    {
-        return;
-    }
-
-    // Deleta os filhos
-    DeleteTree(ptrRoot->left);
-    DeleteTree(ptrRoot->right);
-
-    // Deleta o nó atual
-    free(ptrRoot);
-    ptrRoot = nullptr;
-}
-
+// Função para liberar a memória ocupada pela árvore
 void deleteTree(TreeNode*& ptrRoot)
 {
-    // Se a árvore estiver vazia, não faz nada
     if (ptrRoot == nullptr)
     {
-        return;
+        return; // Se a árvore estiver vazia, não faz nada
     }
 
-    // Deleta os filhos
-    deleteTree(ptrRoot->left);
-    deleteTree(ptrRoot->right);
+    deleteTree(ptrRoot->ptrLeft); // Libera a memória ocupada pela subárvore esquerda
+    deleteTree(ptrRoot->ptrRight); // Libera a memória ocupada pela subárvore direita
 
-    // Deleta o nó atual
-    free(ptrRoot);
-    ptrRoot = nullptr;
+    free(ptrRoot); // Libera a memória ocupada pelo nó atual
+    ptrRoot = nullptr; // Define o ponteiro para a raiz como nulo
 }

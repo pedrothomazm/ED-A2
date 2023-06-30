@@ -3,19 +3,19 @@
 
 struct TreeNode
 {
-    int data;
-    TreeNode* left;
-    TreeNode* right;
+    int idata;
+    TreeNode* ptrLeft;
+    TreeNode* ptrRight;
 };
 
-TreeNode* createNode(int data);
-TreeNode* insertNode(TreeNode* root, int data);
+TreeNode* createNode(int idata);
+TreeNode* insertNode(TreeNode* ptrRoot, int idata);
 TreeNode* buildTreeFromUserInput();
-int getHeight(TreeNode* root);
-int getSize(TreeNode* root);
-void insertElement(TreeNode*& root, int data);
-TreeNode* findMin(TreeNode* node);
-TreeNode* removeNode(TreeNode* root, int data);
-void deleteTree(TreeNode*& root);
+int getHeight(TreeNode* ptrRoot);
+int getSize(TreeNode* ptrRoot);
+void insertElement(TreeNode*& ptrRoot, int idata);
+TreeNode* findMin(TreeNode* ptrNode);
+TreeNode* removeNode(TreeNode* ptrRoot, int idata);
+void deleteTree(TreeNode*& ptrRoot);
 
 #endif
