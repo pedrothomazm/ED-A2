@@ -3,6 +3,7 @@
 #include "sort.h"
 
 using std::cout;
+using std::cin;
 using std::endl;
 
 // Protótipos de funções
@@ -10,6 +11,78 @@ void printMenu();
 
 int main()
 {
+    // Cria ponteiro para a raiz da árvore
+    struct TreeNode* ptrRoot = nullptr;
+
+    // Loop principal
+    while (true) {
+        printMenu();
+
+        // Ler opção
+        int iOption;
+        cout << "Escolha uma opção: ";
+        cin >> iOption;
+
+        // Executa a opção escolhida
+        switch (iOption) {
+            case 1:
+                // Ler árvore de um arquivo
+                break;
+            case 2:
+                // Ler árvore de dados digitados
+                ptrRoot = buildTreeFromUserInput();
+                break;
+            case 3:
+                // Altura da árvore
+                cout << "Altura da árvore: " << getHeight(ptrRoot) << endl;
+                break;
+            case 4:
+                // Tamanho da árvore
+                cout << "Tamanho da árvore: " << getSize(ptrRoot) << endl;
+                break;
+            case 5:
+                // Inserir elemento
+                int iData;
+                cout << "Digite o número a ser inserido: ";
+                cin >> iData;
+                insertElement(ptrRoot, iData);
+                break;
+            case 6:
+                // Remover elemento
+                break;
+            case 7:
+                // Buscar elemento
+                break;
+            case 8:
+                // Verificar se é completa
+                break;
+            case 9:
+                // Verificar se é perfeita
+                break;
+            case 10:
+                // Exibir árvore
+                break;
+            case 11:
+                // Bubble Sort
+                break;
+            case 12:
+                // Selection Sort
+                break;
+            case 13:
+                // Insertion Sort
+                break;
+            case 14:
+                // Shell Sort
+                break;
+            case 15:
+                // Sair
+                return 0;
+            default:
+                cout << "Opção inválida!" << endl << endl;
+                // Pula para o início do loop
+                continue;
+        }
+    }
     return 0;
 }
 
