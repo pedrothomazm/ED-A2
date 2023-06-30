@@ -30,12 +30,20 @@ int main()
         // Registra tempo de execução
         auto timeStart = Clock::now();
 
+        cout << "============================================" << endl << endl;
+
         // Executa a opção escolhida
         switch (iOption) {
             case 1:
+                // Deletar árvore atual
+                deleteTree(ptrRoot);
+
                 // Ler árvore de um arquivo
                 break;
             case 2:
+                // Deletar árvore atual
+                deleteTree(ptrRoot);
+
                 // Ler árvore de dados digitados
                 ptrRoot = buildTreeFromUserInput();
                 break;
@@ -89,6 +97,8 @@ int main()
                 // Pula para o início do loop
                 continue;
         }
+        cout << endl << "============================================" << endl;
+
         // Calcula tempo de execução
         auto timeEnd = Clock::now();
         auto timeDiff = duration_cast<milliseconds>(timeEnd - timeStart);

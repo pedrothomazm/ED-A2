@@ -16,5 +16,6 @@ int getSize(TreeNode* root);
 void insertElement(TreeNode*& root, int data);
 TreeNode* findMin(TreeNode* node);
 TreeNode* removeNode(TreeNode* root, int data);
+void deleteTree(TreeNode*& root);
 
 #endif
