@@ -151,3 +151,20 @@ TreeNode* removeNode(TreeNode* root, int data)
     
     return root;
 }
+
+void deleteTree(TreeNode*& ptrRoot)
+{
+    // Se a árvore estiver vazia, não faz nada
+    if (ptrRoot == nullptr)
+    {
+        return;
+    }
+
+    // Deleta os filhos
+    deleteTree(ptrRoot->left);
+    deleteTree(ptrRoot->right);
+
+    // Deleta o nó atual
+    free(ptrRoot);
+    ptrRoot = nullptr;
+}
