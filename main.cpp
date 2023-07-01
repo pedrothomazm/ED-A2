@@ -6,6 +6,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
 using Clock = std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
@@ -26,6 +27,9 @@ int main()
         int iOption;
         cout << "Escolha uma opção: ";
         cin >> iOption;
+        
+        // Variável auxiliar para leitura de dados
+        int iData;
 
         // Registra tempo de execução
         auto timeStart = Clock::now();
@@ -34,12 +38,19 @@ int main()
 
         // Executa a opção escolhida
         switch (iOption) {
-            case 1:
+            case 1: {
                 // Deletar árvore atual
                 deleteTree(ptrRoot);
 
+                // Ler nome do arquivo
+                string sFilename;
+                cout << "Digite o caminho absoluto do arquivo: ";
+                cin >> sFilename;
+
                 // Ler árvore de um arquivo
+                ptrRoot = buildTreeFromFile(sFilename);
                 break;
+            }
             case 2:
                 // Deletar árvore atual
                 deleteTree(ptrRoot);
@@ -57,25 +68,48 @@ int main()
                 break;
             case 5:
                 // Inserir elemento
-                int iData;
                 cout << "Digite o número a ser inserido: ";
                 cin >> iData;
                 insertElement(ptrRoot, iData);
                 break;
             case 6:
+                // Ler elemento
+                cout << "Digite o número a ser removido: ";
+                cin >> iData;
+
                 // Remover elemento
+                ptrRoot = removeNode(ptrRoot, iData);
                 break;
-            case 7:
+            case 7: {
+                // Ler elemento
+                cout << "Digite o número a ser buscado: ";
+                cin >> iData;
+
                 // Buscar elemento
+                struct TreeNode* ptrNode = findAddress(ptrRoot, iData);
+                if (ptrNode != nullptr)
+                    cout << "Elemento encontrado! " << ptrNode << endl;
+                else
+                    cout << "Elemento não encontrado!" << endl;
                 break;
+            }
             case 8:
                 // Verificar se é completa
+                if (CompleteTree(ptrRoot, 0, getSize(ptrRoot)))
+                    cout << "A árvore é completa!" << endl;
+                else
+                    cout << "A árvore não é completa!" << endl;
                 break;
             case 9:
                 // Verificar se é perfeita
+                if (PerfectTree(ptrRoot, getHeight(ptrRoot), 0))
+                    cout << "A árvore é perfeita!" << endl;
+                else
+                    cout << "A árvore não é perfeita!" << endl;
                 break;
             case 10:
                 // Exibir árvore
+                printTree(ptrRoot);
                 break;
             case 11:
                 // Bubble Sort

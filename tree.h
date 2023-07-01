@@ -21,8 +21,9 @@ void printInOrder(TreeNode* ptrRoot);
 TreeNode* findMin(TreeNode* ptrNode);
 TreeNode* removeNode(TreeNode* ptrRoot, int idata);
 void deleteTree(TreeNode*& ptrRoot);
-bool PerfectTree(TreeNode* ptrRoot, int iHeight = -1, int iLevel = 0);
+bool PerfectTree(TreeNode* ptrRoot, int iHeight, int iLevel);
 bool CompleteTree(TreeNode* ptrRoot, int iIndex, int iSize);
 TreeNode* findAddress(TreeNode*& ptrRoot, int idata);
+void printTree(TreeNode* ptrRoot);
 
 #endif

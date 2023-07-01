@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
+#include "queue.h"
 
 using namespace std;
 
@@ -295,4 +296,58 @@ TreeNode* findAddress(TreeNode*& ptrRoot, int idata)
     {
         return findAddress(ptrRoot->ptrRight, idata); // Verifica na subárvore direita
     }
+}
+
+// Função para imprimir a árvore em largura (BFS)
+void printTree(TreeNode* ptrRoot)
+{
+    // Verifica se a árvore não está vazia
+    if (ptrRoot == nullptr)
+    {
+        return;
+    }
+
+    int iHeight = getHeight(ptrRoot); // Obtém o tamanho da árvore
+    int iCounter = 0; // Contador para o número de nós impressos, vazios ou não
+    int iThreshold = 1; // Define o limite para a impressão de cada nível
+
+    // Cria uma fila para armazenar os nós da árvore
+    struct Queue* ptrQueue = createQueue();
+    enqueue(ptrQueue, ptrRoot);
+
+    // Loop até imprimir todos nós da árvore
+    while (iHeight > 0)
+    {
+        // Obtém o nó da frente e o remove da fila
+        struct TreeNode* ptrTemp = dequeue(ptrQueue);
+
+        cout << "(";
+        if (ptrTemp == nullptr)
+        {
+            // Se o nó for nulo, adiciona dois nós nulos à fila
+            // para facilitar a impressão do nível seguinte
+            enqueue(ptrQueue, nullptr);
+            enqueue(ptrQueue, nullptr);
+        } else {
+            // Imprime o valor do nó atual
+            cout << ptrTemp->idata;
+
+            // Enfileira os filhos do nó atual
+            enqueue(ptrQueue, ptrTemp->ptrLeft);
+            enqueue(ptrQueue, ptrTemp->ptrRight);
+        }
+        cout << ")";
+        
+        // Incrementa o contador de nós impressos
+        iCounter++;
+        // Verifica se o número de nós na linha requer uma quebra de linha
+        if (iCounter == iThreshold) {
+            cout << endl;
+            // Dobra o limite para a próxima linha
+            iThreshold = 2 * iThreshold + 1;
+            iHeight--; // Decrementa a altura
+        }
+    }
+
+    deleteQueue(ptrQueue); // Libera a memória ocupada pela fila
 }
