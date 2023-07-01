@@ -1,6 +1,8 @@
 #include "tree.h"
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -32,6 +34,52 @@ TreeNode* insertNode(TreeNode* ptrRoot, int idata)
     }
 
     return ptrRoot; // Retorna a raiz da árvore modificada
+}
+
+// Função para construir uma árvore a partir de um arquivo de texto 
+TreeNode* buildTreeFromFile(const string& filename) 
+{
+    // Abre o arquivo para leitura
+    ifstream inputFile(filename);
+    // Verifica se o arquivo foi aberto corretamente
+    if (!inputFile) 
+    {
+        cout << "Erro ao abrir o arquivo." << endl;
+        return nullptr;
+    }
+
+    // Inicializa a raiz da árvore como nulo
+    TreeNode* ptrRoot = nullptr;
+    int idata;
+    string line;
+
+    // Lê cada linha do arquivo
+    while (getline(inputFile, line)) {
+        // Cria um objeto istringstream para analisar cada número na linha
+        istringstream iss(line);
+        // Lê cada número e insere na árvore
+        while (iss >> idata) {
+            ptrRoot = insertNode(ptrRoot, idata);  // Chama a função insertNode para inserir o número na árvore
+        }
+    }
+
+    // Fecha o arquivo após a leitura
+    inputFile.close();
+    // Retorna o ponteiro para a raiz da árvore
+    return ptrRoot;
+}
+
+
+// Função para imprimir os nós de uma árvore binária em ordem crescente
+void printInOrder(TreeNode* ptrRoot)
+{
+    // Verifica se o ponteiro para a raiz não é nulo
+    if (ptrRoot != nullptr) {
+        // Imprime os nós na ordem correta: esquerda, raiz, direita
+        printInOrder(ptrRoot->ptrLeft);  // Imprime os nós da subárvore esquerda
+        cout << ptrRoot->idata << " ";  // Imprime o valor do nó atual
+        printInOrder(ptrRoot->ptrRight);  // Imprime os nós da subárvore direita
+    }
 }
 
 // Função para construir uma árvore a partir de entrada do usuário
