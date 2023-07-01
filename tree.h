@@ -23,5 +23,6 @@ TreeNode* removeNode(TreeNode* ptrRoot, int idata);
 void deleteTree(TreeNode*& ptrRoot);
 bool PerfectTree(TreeNode* ptrRoot, int iHeight = -1, int iLevel = 0);
 bool CompleteTree(TreeNode* ptrRoot, int iIndex, int iSize);
+TreeNode* findAddress(TreeNode*& ptrRoot, int idata);
 
 #endif

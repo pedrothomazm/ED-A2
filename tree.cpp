@@ -279,3 +279,20 @@ bool CompleteTree(TreeNode* ptrRoot, int iIndex, int iSize)
     // Verifica se as subárvores da esquerda e da direita são completas
     return (CompleteTree(ptrRoot->ptrLeft, 2 * iIndex + 1, iSize) and CompleteTree(ptrRoot->ptrRight, 2 * iIndex + 2, iSize));
 }
+
+// Função para buscar o endereço de um elemento da árvore
+TreeNode* findAddress(TreeNode*& ptrRoot, int idata)
+{
+    if (ptrRoot == nullptr or ptrRoot->idata == idata)
+    {
+        return ptrRoot; // Retorna nullptr se não encontrar o ponteiro ou o ponteiro do nó
+    }
+    else if (idata < ptrRoot->idata)
+    {
+        return findAddress(ptrRoot->ptrLeft, idata); // Verifica na subárvore esquerda
+    }
+    else
+    {
+        return findAddress(ptrRoot->ptrRight, idata); // Verifica na subárvore direita
+    }
+}
