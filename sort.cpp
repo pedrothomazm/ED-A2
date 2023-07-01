@@ -1,7 +1,7 @@
 #include "sort.h"
 #include <iostream>
 
-using namespace std 
+using namespace std;
 
 TreeNode* findMinAndRemove(TreeNode*& ptrRoot)
 {
@@ -61,11 +61,29 @@ void treeToList(TreeNode* ptrNode, TreeNode*& ptrList)
         return; // Se o nó for nulo, não há mais nada a ser feito
     }
 
-    treeToList(ptrNode->ptrLeft, ptrList); // Converte a subárvore esquerda em uma lista
+    struct TreeNode* ptrLeft = ptrNode->ptrLeft; // Ponteiro para a subárvore esquerda
+    struct TreeNode* ptrRight = ptrNode->ptrRight; // Ponteiro para a subárvore direita
 
-    insertNodeToList(ptrList, ptrNode); // Insere o nó atual na lista de forma ordenada
+    // Desconecta o nó atual da árvore
+    ptrNode->ptrLeft = nullptr;
+    ptrNode->ptrRight = nullptr;
 
-    treeToList(ptrNode->ptrRight, ptrList); // Converte a subárvore direita em uma lista
+    if (ptrList == nullptr)
+    {
+        ptrList = ptrNode; // Se a lista estiver vazia, o nó atual se torna o primeiro nó da lista
+    }
+    else
+    {
+        struct TreeNode* ptrCurrent = ptrList;
+        while (ptrCurrent->ptrRight != nullptr)
+        {
+            ptrCurrent = ptrCurrent->ptrRight; // Percorre a lista até encontrar o último nó
+        }
+        ptrCurrent->ptrRight = ptrNode; // O nó atual é inserido no final da lista
+    }
+    
+    treeToList(ptrLeft, ptrList); // Converte a subárvore esquerda em uma lista
+    treeToList(ptrRight, ptrList); // Converte a subárvore direita em uma lista
 }
 
 
