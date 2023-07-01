@@ -22,14 +22,14 @@ TreeNode* findMinAndRemove(TreeNode*& ptrRoot)
     }
 }
 
-// Função auxiliar para inserir um nó em uma lista (ordenada por valor idata)
+// Função auxiliar para inserir um nó em uma lista (ordenada por valor iData)
 void insertNodeToList(TreeNode*& ptrList, TreeNode* ptrNode)
 {
     if (ptrList == nullptr)
     {
         ptrList = ptrNode; // Se a lista estiver vazia, o nó se torna o primeiro nó da lista
     }
-    else if (ptrNode->idata < ptrList->idata)
+    else if (ptrNode->iData < ptrList->iData)
     {
         ptrNode->ptrRight = ptrList; // O nó atual é adicionado como o primeiro nó da lista
         ptrList = ptrNode; // O nó atual se torna o novo primeiro nó da lista
@@ -37,7 +37,7 @@ void insertNodeToList(TreeNode*& ptrList, TreeNode* ptrNode)
     else
     {
         TreeNode* ptrCurrent = ptrList;
-        while (ptrCurrent->ptrRight != nullptr && ptrCurrent->ptrRight->idata < ptrNode->idata)
+        while (ptrCurrent->ptrRight != nullptr && ptrCurrent->ptrRight->iData < ptrNode->iData)
         {
             ptrCurrent = ptrCurrent->ptrRight; // Percorre a lista até encontrar a posição correta para o nó atual
         }
@@ -49,9 +49,9 @@ void insertNodeToList(TreeNode*& ptrList, TreeNode* ptrNode)
 // Função auxiliar para trocar os valores de dois nós
 void swapNodeValues(TreeNode* node1, TreeNode* node2)
 {
-    int temp = node1->idata;
-    node1->idata = node2->idata;
-    node2->idata = temp;
+    int temp = node1->iData;
+    node1->iData = node2->iData;
+    node2->iData = temp;
 }
 
 void treeToList(TreeNode* ptrNode, TreeNode*& ptrList)
@@ -106,7 +106,7 @@ void bubbleSort(struct TreeNode*& ptrHead)
     
     // Caso especial: primeiro iteração da lista toda
     // Caso especial: primeiro elemento
-    if (ptrOuter->idata < ptrPrev->idata)
+    if (ptrOuter->iData < ptrPrev->iData)
     {
         // Troca o primeiro elemento com o segundo
         ptrPrev->ptrRight = ptrOuter->ptrRight;
@@ -121,7 +121,7 @@ void bubbleSort(struct TreeNode*& ptrHead)
     // O primeiro loop vai até o último elemento da lista
     while (ptrOuter->ptrRight != nullptr)
     {
-        if (ptrOuter->ptrRight->idata < ptrOuter->idata)
+        if (ptrOuter->ptrRight->iData < ptrOuter->iData)
         {
             // Troca o elemento atual com o próximo
             struct TreeNode* ptrTemp = ptrOuter->ptrRight;
@@ -150,7 +150,7 @@ void bubbleSort(struct TreeNode*& ptrHead)
         bSorted = true;
 
         // Caso especial: primeiro elemento
-        if (ptrInner->idata < ptrPrev->idata)
+        if (ptrInner->iData < ptrPrev->iData)
         {
             // Troca o primeiro elemento com o segundo
             ptrPrev->ptrRight = ptrInner->ptrRight;
@@ -166,7 +166,7 @@ void bubbleSort(struct TreeNode*& ptrHead)
         // pois os elementos depois dele já estão ordenados
         while (ptrInner->ptrRight != ptrOuter)
         {
-            if (ptrInner->ptrRight->idata < ptrInner->idata)
+            if (ptrInner->ptrRight->iData < ptrInner->iData)
             {
                 // Troca o elemento atual com o próximo
                 struct TreeNode* ptrTemp = ptrInner->ptrRight;
@@ -234,7 +234,7 @@ void insertionSort(struct TreeNode*& ptrHead) {
         struct TreeNode* ptrIterate = ptrHead;
 
         // Caso especial para a primeira posição
-        if (ptrIterate->idata > ptrCurrent->idata) {
+        if (ptrIterate->iData > ptrCurrent->iData) {
             // Remove o nó da lista
             ptrCurrentPrev->ptrRight = ptrCurrent->ptrRight;
 
@@ -254,7 +254,7 @@ void insertionSort(struct TreeNode*& ptrHead) {
         // Itera a parte ordenada até encontrar o ponto de inserção
         while (ptrIterate != ptrCurrent) {
             // Se achar o ponto de inserção, insere o nó na posição correta
-            if (ptrIterate->idata > ptrCurrent->idata) {
+            if (ptrIterate->iData > ptrCurrent->iData) {
                 // Remove o nó da lista
                 ptrCurrentPrev->ptrRight = ptrCurrent->ptrRight;
 

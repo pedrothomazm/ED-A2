@@ -95,14 +95,14 @@ int main()
             }
             case 8:
                 // Verificar se é completa
-                if (CompleteTree(ptrRoot, 0, getSize(ptrRoot)))
+                if (completeTree(ptrRoot, 0, getSize(ptrRoot)))
                     cout << "A árvore é completa!" << endl;
                 else
                     cout << "A árvore não é completa!" << endl;
                 break;
             case 9:
                 // Verificar se é perfeita
-                if (PerfectTree(ptrRoot, getHeight(ptrRoot), 0))
+                if (perfectTree(ptrRoot, getHeight(ptrRoot), 0))
                     cout << "A árvore é perfeita!" << endl;
                 else
                     cout << "A árvore não é perfeita!" << endl;
