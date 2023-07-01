@@ -220,32 +220,68 @@ void selectionSort(TreeNode*& ptrRoot)
     ptrRoot = ptrList; // Atualiza o ponteiro da raiz para a lista ordenada
 }
 
-void insertionSort(TreeNode*& ptrRoot) {
-    if (ptrRoot == nullptr || ptrRoot->ptrRight == nullptr)
+void insertionSort(struct TreeNode*& ptrHead) {
+    if (ptrHead == nullptr) {
         return;
-
-    TreeNode *sorted = nullptr; // Ponteiro para a lista ordenada
-    TreeNode *current = ptrRoot; // Ponteiro para percorrer a lista não ordenada
-
-    while (current != nullptr) {
-        TreeNode* next = current->ptrRight; // Próximo nó na lista não ordenada
-
-        if (sorted == nullptr || sorted->idata >= current->idata) {
-            // Caso especial: insere o nó no início da lista ordenada
-            current->ptrRight = sorted;
-            sorted = current;
-        } else {
-            TreeNode *temp = sorted;
-            while (temp->ptrRight != nullptr && temp->ptrRight->idata < current->idata)
-                temp = temp->ptrRight;
-
-            // Insere o nó em uma posição intermediária da lista ordenada
-            current->ptrRight = temp->ptrRight;
-            temp->ptrRight = current;
-        }
-        current = next; // Avança para o próximo nó na lista não ordenada
     }
 
-    ptrRoot = sorted; // Atualiza o ponteiro da raiz para a lista ordenada
+    struct TreeNode* ptrList = nullptr;
+    treeToList(ptrHead, ptrList);
+
+    // Ponteiros do nó a ser inserido na parte ordenada da lista
+    struct TreeNode* ptrCurrentPrev = ptrList;
+    struct TreeNode* ptrCurrent = ptrCurrentPrev->ptrRight;
+
+    while (ptrCurrent != nullptr) {
+        // Ponteiro para o nó a ser comparado com o nó a ser inserido
+        struct TreeNode* ptrIterate = ptrList;
+
+        // Caso especial para a primeira posição
+        if (ptrIterate->idata > ptrCurrent->idata) {
+            // Remove o nó da lista
+            ptrCurrentPrev->ptrRight = ptrCurrent->ptrRight;
+
+            // Insere o nó na posição correta
+            ptrCurrent->ptrRight = ptrIterate;
+            ptrList = ptrCurrent;
+
+            // Itera para o próximo nó
+            ptrCurrent = ptrCurrentPrev->ptrRight;
+            continue;
+        }
+
+        // Ponteiro para o nó anterior ao ponto de inserção
+        struct TreeNode* ptrIteratePrev = ptrIterate;
+        ptrIterate = ptrIteratePrev->ptrRight;
+
+        // Itera a parte ordenada até encontrar o ponto de inserção
+        while (ptrIterate != ptrCurrent) {
+            // Se achar o ponto de inserção, insere o nó na posição correta
+            if (ptrIterate->idata > ptrCurrent->idata) {
+                // Remove o nó da lista
+                ptrCurrentPrev->ptrRight = ptrCurrent->ptrRight;
+
+                // Insere o nó na posição correta
+                ptrIteratePrev->ptrRight = ptrCurrent;
+                ptrCurrent->ptrRight = ptrIterate;
+                break;
+            }
+
+            // Itera para o próximo nó
+            ptrIteratePrev = ptrIterate;
+            ptrIterate = ptrIteratePrev->ptrRight;
+        }
+
+        // Se o nó não foi inserido, ele já está na posição correta
+        if (ptrIterate == ptrCurrent) {
+            ptrCurrentPrev = ptrCurrent;
+            ptrCurrent = ptrCurrentPrev->ptrRight;
+        }
+        else {
+            ptrCurrent = ptrCurrentPrev->ptrRight;
+        }
+    }
+
+    ptrHead = ptrList;
 }
 
