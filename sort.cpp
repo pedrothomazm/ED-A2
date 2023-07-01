@@ -1,6 +1,7 @@
 #include "sort.h"
 #include <iostream>
 
+using namespace std 
 
 TreeNode* findMinAndRemove(TreeNode*& ptrRoot)
 {
@@ -62,24 +63,11 @@ void treeToList(TreeNode* ptrNode, TreeNode*& ptrList)
 
     treeToList(ptrNode->ptrLeft, ptrList); // Converte a subárvore esquerda em uma lista
 
-    if (ptrList == nullptr)
-    {
-        ptrList = ptrNode; // Se a lista estiver vazia, o nó atual se torna o primeiro nó da lista
-        ptrList->ptrLeft = nullptr; // Define o ponteiro esquerdo do primeiro nó como nulo
-    }
-    else
-    {
-        TreeNode* ptrCurrent = ptrList;
-        while (ptrCurrent->ptrRight != nullptr)
-        {
-            ptrCurrent = ptrCurrent->ptrRight; // Percorre a lista até o último nó
-        }
-        ptrCurrent->ptrRight = ptrNode; // Adiciona o nó atual como próximo do último nó da lista
-        ptrNode->ptrLeft = nullptr; // Define o ponteiro esquerdo do nó atual como nulo
-    }
+    insertNodeToList(ptrList, ptrNode); // Insere o nó atual na lista de forma ordenada
 
     treeToList(ptrNode->ptrRight, ptrList); // Converte a subárvore direita em uma lista
 }
+
 
 void bubbleSort(TreeNode*& ptrRoot)
 {
@@ -151,9 +139,8 @@ void insertionSort(TreeNode*& ptrRoot) {
                 temp = temp->ptrRight;
 
             // Insere o nó em uma posição intermediária da lista ordenada
-            TreeNode* tempRight = temp->ptrRight;
+            current->ptrRight = temp->ptrRight;
             temp->ptrRight = current;
-            current->ptrRight = tempRight;
         }
         current = next; // Avança para o próximo nó na lista não ordenada
     }
