@@ -113,12 +113,18 @@ int main()
                 break;
             case 11:
                 // Bubble Sort
+                bubbleSort(ptrRoot);
+                cout << "Árvore ordenada usando Bubble Sort." << endl;
                 break;
             case 12:
                 // Selection Sort
+                selectionSort(ptrRoot);
+                cout << "Árvore ordenada usando Selection Sort." << endl;
                 break;
             case 13:
                 // Insertion Sort
+                insertionSort(ptrRoot);
+                cout << "Árvore ordenada usando Insertion Sort." << endl;
                 break;
             case 14:
                 // Shell Sort
