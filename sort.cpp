@@ -87,26 +87,109 @@ void treeToList(TreeNode* ptrNode, TreeNode*& ptrList)
 }
 
 
-void bubbleSort(TreeNode*& ptrRoot)
+void bubbleSort(struct TreeNode*& ptrHead)
 {
-    if (ptrRoot == nullptr || ptrRoot->ptrRight == nullptr)
+    struct TreeNode* ptrList = nullptr;
+    treeToList(ptrHead, ptrList);
+
+    // Casos especiais: lista vazia ou único elemento
+    if (ptrList == nullptr || ptrList->ptrRight == nullptr)
+        return;
+    
+    // Booleano para indicar se a lista está ordenada
+    bool bSorted = true;
+
+    // Ponteiro para auxiliar na iteração da lista
+    struct TreeNode* ptrPrev = ptrList;
+    // Ponteiro que indica o começo da parte ordenada da lista
+    struct TreeNode* ptrOuter = ptrPrev->ptrRight;
+    
+    // Caso especial: primeiro iteração da lista toda
+    // Caso especial: primeiro elemento
+    if (ptrOuter->idata < ptrPrev->idata)
     {
-        return; // A árvore está vazia ou possui apenas um nó, não há necessidade de ordenação
+        // Troca o primeiro elemento com o segundo
+        ptrPrev->ptrRight = ptrOuter->ptrRight;
+        ptrOuter->ptrRight = ptrPrev;
+        ptrPrev = ptrOuter;
+        ptrList = ptrOuter;
+        bSorted = false;
     }
 
-    TreeNode* ptrList = nullptr; // Ponteiro para a lista que será construída a partir da árvore
-    treeToList(ptrRoot, ptrList); // Converte a árvore em uma lista
-
-    TreeNode* ptrCurrent = ptrList; // Ponteiro para o nó atual da lista
-    ptrRoot = ptrCurrent; // Atualiza o ponteiro da raiz para o início da lista
-
-    while (ptrCurrent->ptrRight != nullptr)
+    ptrOuter = ptrPrev->ptrRight;
+    
+    // O primeiro loop vai até o último elemento da lista
+    while (ptrOuter->ptrRight != nullptr)
     {
-        ptrCurrent = ptrCurrent->ptrRight; // Percorre a lista até o último nó
+        if (ptrOuter->ptrRight->idata < ptrOuter->idata)
+        {
+            // Troca o elemento atual com o próximo
+            struct TreeNode* ptrTemp = ptrOuter->ptrRight;
+            ptrOuter->ptrRight = ptrTemp->ptrRight;
+            ptrTemp->ptrRight = ptrOuter;
+            ptrPrev->ptrRight = ptrTemp;
+            bSorted = false;
+        }
+        
+        ptrPrev = ptrPrev->ptrRight;
+        ptrOuter = ptrPrev->ptrRight;
     }
 
-    ptrRoot->ptrLeft = nullptr; // Desconecta o nó inicial da lista da árvore
-    ptrCurrent->ptrRight = nullptr; // Define o próximo do último nó como nulo, finalizando a lista
+    // Se a lista estiver ordenada, retorna
+    if (bSorted) {
+        ptrHead = ptrList;
+        return;
+    }
+
+    // O loop exterior vai do final da lista até o segundo elemento,
+    // pois quando chegar no segundo, todo resto já estará ordenado
+    while (ptrList->ptrRight != ptrOuter)
+    {
+        ptrPrev = ptrList;
+        struct TreeNode* ptrInner = ptrPrev->ptrRight;
+        bSorted = true;
+
+        // Caso especial: primeiro elemento
+        if (ptrInner->idata < ptrPrev->idata)
+        {
+            // Troca o primeiro elemento com o segundo
+            ptrPrev->ptrRight = ptrInner->ptrRight;
+            ptrInner->ptrRight = ptrPrev;
+            ptrPrev = ptrInner;
+            ptrList = ptrInner;
+            bSorted = false;
+        }
+
+        ptrInner = ptrPrev->ptrRight;
+
+        // O loop interior vai do começo até o elemento do loop exterior,
+        // pois os elementos depois dele já estão ordenados
+        while (ptrInner->ptrRight != ptrOuter)
+        {
+            if (ptrInner->ptrRight->idata < ptrInner->idata)
+            {
+                // Troca o elemento atual com o próximo
+                struct TreeNode* ptrTemp = ptrInner->ptrRight;
+                ptrInner->ptrRight = ptrTemp->ptrRight;
+                ptrTemp->ptrRight = ptrInner;
+                ptrPrev->ptrRight = ptrTemp;
+                bSorted = false;
+            }
+            
+            ptrPrev = ptrPrev->ptrRight;
+            ptrInner = ptrPrev->ptrRight;
+        }
+
+        // Se a lista estiver ordenada, retorna
+        if (bSorted) {
+            ptrHead = ptrList;
+            return;
+        }
+
+        ptrOuter = ptrInner;
+    }
+
+    ptrHead = ptrList;
 }
 
 void selectionSort(TreeNode*& ptrRoot)
