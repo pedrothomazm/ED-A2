@@ -231,3 +231,51 @@ void deleteTree(TreeNode*& ptrRoot)
     free(ptrRoot); // Libera a memória ocupada pelo nó atual
     ptrRoot = nullptr; // Define o ponteiro para a raiz como nulo
 }
+
+// Função para verificar se a árvore é perfeita ou não
+bool PerfectTree(TreeNode* ptrRoot, int iHeight = -1, int iLevel = 0)
+{
+    // Caso a árvore não nós
+    if (ptrRoot == nullptr)
+    {
+        return true; // Retorna que a árvore é perfeita
+    }
+    // Caso a altura da árvore não tenha sido calculado
+    else if (iHeight == -1)
+    {
+        iHeight = getHeight(ptrRoot); // Função getHeight é chamada para calcular a altura da árvore
+    }
+    // Caso o nó atual não tenha filhos
+    else if (ptrRoot->ptrLeft == nullptr and ptrRoot->ptrRight == nullptr)
+    {
+        return (iHeight == iLevel + 1); // Se a altura da árvore for igual ao nível da recursão mais 1, retorna verdadeiro
+    }
+    // Caso o nó atual tenha somente um filho
+    else if (ptrRoot->ptrLeft == nullptr or ptrRoot->ptrRight == nullptr)
+    {
+        return false; // Retorna que a árvore não é perfeita
+    }
+    // Se tanto o lado esquerdo quanto o lado direito são perfeitos, a árvore é perfeita
+    return PerfectTree(ptrRoot->ptrLeft, iHeight, iLevel + 1) and 
+        PerfectTree(ptrRoot->ptrRight, iHeight, iLevel + 1);
+}
+
+// Função para verificar se a árvore é completa ou não
+bool CompleteTree(TreeNode* ptrRoot, int iIndex, int iSize)
+{
+    
+    // Caso a árvore não tenha nós
+    if (ptrRoot == nullptr)
+    {
+        return true; // Retorna que a árvore é completa
+    }
+    
+    // Se o índice for maior ou igual ao número de nós
+    else if (iIndex >= iSize)
+    {
+        return false; // Retorna que a árvore não é completa
+    }
+    
+    // Verifica se as subárvores da esquerda e da direita são completas
+    return (CompleteTree(ptrRoot->ptrLeft, 2 * iIndex + 1, iSize) and CompleteTree(ptrRoot->ptrRight, 2 * iIndex + 2, iSize));
+}
