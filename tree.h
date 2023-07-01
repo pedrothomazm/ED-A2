@@ -5,25 +5,25 @@
 
 struct TreeNode
 {
-    int idata;
+    int iData;
     TreeNode* ptrLeft;
     TreeNode* ptrRight;
 };
 
-TreeNode* createNode(int idata);
-TreeNode* insertNode(TreeNode* ptrRoot, int idata);
+TreeNode* createNode(int iData);
+TreeNode* insertNode(TreeNode* ptrRoot, int iData);
 TreeNode* buildTreeFromFile(const std::string& filename);
 TreeNode* buildTreeFromUserInput();
 int getHeight(TreeNode* ptrRoot);
 int getSize(TreeNode* ptrRoot);
-void insertElement(TreeNode*& ptrRoot, int idata);
+void insertElement(TreeNode*& ptrRoot, int iData);
 void printInOrder(TreeNode* ptrRoot);
 TreeNode* findMin(TreeNode* ptrNode);
-TreeNode* removeNode(TreeNode* ptrRoot, int idata);
+TreeNode* removeNode(TreeNode* ptrRoot, int iData);
 void deleteTree(TreeNode*& ptrRoot);
-bool PerfectTree(TreeNode* ptrRoot, int iHeight, int iLevel);
-bool CompleteTree(TreeNode* ptrRoot, int iIndex, int iSize);
-TreeNode* findAddress(TreeNode*& ptrRoot, int idata);
+bool perfectTree(TreeNode* ptrRoot, int iHeight, int iLevel);
+bool completeTree(TreeNode* ptrRoot, int iIndex, int iSize);
+TreeNode* findAddress(TreeNode*& ptrRoot, int iData);
 void printTree(TreeNode* ptrRoot);
 
 #endif

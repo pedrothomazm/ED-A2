@@ -10,5 +10,7 @@ void treeToList(TreeNode* ptrNode, TreeNode*& ptrList);
 void bubbleSort(TreeNode*& ptrRoot);
 void selectionSort(TreeNode*& ptrRoot);
 void insertionSort(TreeNode*& ptrRoot);
+void insertionGapSort(TreeNode*& ptrRoot, int, int);
+void shellSort(TreeNode*& ptrRoot);
 
 #endif
