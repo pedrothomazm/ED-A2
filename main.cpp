@@ -121,13 +121,19 @@ int main()
                 selectionSort(ptrRoot);
                 cout << "Árvore ordenada usando Selection Sort." << endl;
                 break;
-            case 13:
+            case 13: {
                 // Insertion Sort
-                insertionSort(ptrRoot);
+                TreeNode* ptrList = nullptr;
+                treeToList(ptrRoot, ptrList);
+                insertionSort(ptrList);
+                ptrRoot = ptrList;
                 cout << "Árvore ordenada usando Insertion Sort." << endl;
                 break;
+            }
             case 14:
                 // Shell Sort
+                shellSort(ptrRoot);
+                cout << "Árvore ordenada usando Shell Sort." << endl;
                 break;
             case 15:
                 // Sair
