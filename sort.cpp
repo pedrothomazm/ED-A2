@@ -225,16 +225,13 @@ void insertionSort(struct TreeNode*& ptrHead) {
         return;
     }
 
-    struct TreeNode* ptrList = nullptr;
-    treeToList(ptrHead, ptrList);
-
     // Ponteiros do nó a ser inserido na parte ordenada da lista
-    struct TreeNode* ptrCurrentPrev = ptrList;
+    struct TreeNode* ptrCurrentPrev = ptrHead;
     struct TreeNode* ptrCurrent = ptrCurrentPrev->ptrRight;
 
     while (ptrCurrent != nullptr) {
         // Ponteiro para o nó a ser comparado com o nó a ser inserido
-        struct TreeNode* ptrIterate = ptrList;
+        struct TreeNode* ptrIterate = ptrHead;
 
         // Caso especial para a primeira posição
         if (ptrIterate->idata > ptrCurrent->idata) {
@@ -243,7 +240,7 @@ void insertionSort(struct TreeNode*& ptrHead) {
 
             // Insere o nó na posição correta
             ptrCurrent->ptrRight = ptrIterate;
-            ptrList = ptrCurrent;
+            ptrHead = ptrCurrent;
 
             // Itera para o próximo nó
             ptrCurrent = ptrCurrentPrev->ptrRight;
@@ -281,7 +278,115 @@ void insertionSort(struct TreeNode*& ptrHead) {
             ptrCurrent = ptrCurrentPrev->ptrRight;
         }
     }
+}
+
+void insertionGapSort(struct TreeNode*& ptrHead, int iSize, int iGap) {
+    if (iSize <= iGap) {
+        return;
+    }
+
+    if (iGap == 1) {
+        insertionSort(ptrHead);
+        return;
+    }
+    
+    // Ponteiros para criar uma lista temporária com o primeiro nó
+    struct TreeNode* ptrTempHead = ptrHead;
+    struct TreeNode* ptrTempTail = ptrHead;
+
+    // Remove o primeiro nó da lista original
+    ptrHead = ptrHead->ptrRight;
+    iSize--;
+
+    // Ponteiros para iterar pela lista original
+    struct TreeNode* ptrCurrentPrev = ptrHead;
+    struct TreeNode* ptrCurrent = ptrCurrentPrev->ptrRight;
+    int iCount = 2;
+
+    while (ptrCurrent != nullptr) {
+        // Encontra os nós de um segmento da lista a ser ordenado
+        if (iCount % iGap == 0) {
+            // Remove o nó da lista original
+            ptrCurrentPrev->ptrRight = ptrCurrent->ptrRight;
+            iSize--;
+
+            // Insere o nó na lista temporária
+            ptrTempTail->ptrRight = ptrCurrent;
+            ptrTempTail = ptrCurrent;
+        }
+        else {
+            ptrCurrentPrev = ptrCurrent;
+        }
+
+        ptrCurrent = ptrCurrentPrev->ptrRight;
+        iCount++;
+    }
+
+    ptrTempTail->ptrRight = nullptr;
+    // Ordena o segmento da lista
+    insertionSort(ptrTempHead);
+    // Ordena o resto da lista, mas como alguns elementos foram removidos,
+    // a distância entre os nós é menor, então iGap é decrementado
+    insertionGapSort(ptrHead, iSize, iGap - 1);
+
+    // Remove o primeiro nó da lista temporária
+    ptrCurrentPrev = ptrTempHead;
+    ptrTempHead = ptrTempHead->ptrRight;
+    // Insere o nó na lista original
+    ptrCurrentPrev->ptrRight = ptrHead;
+    ptrHead = ptrCurrentPrev;
+
+    // Variáveis para iterar pela lista original
+    ptrCurrent = ptrCurrentPrev->ptrRight;
+    iCount = 1;
+
+    // Itera pelas listas para inserir os nós ordenados nos lugares certos
+    while (ptrTempHead != nullptr) {
+        if (iCount % iGap == 0) {
+            // Remove o nó da lista temporária
+            ptrCurrentPrev->ptrRight = ptrTempHead;
+            ptrTempHead = ptrTempHead->ptrRight;
+
+            // Insere o nó na lista original
+            ptrCurrentPrev = ptrCurrentPrev->ptrRight;
+            ptrCurrentPrev->ptrRight = ptrCurrent;
+        }
+        else {
+            ptrCurrentPrev = ptrCurrent;
+            ptrCurrent = ptrCurrentPrev->ptrRight;
+        }
+
+        iCount++;
+    }
+}
+
+void shellSort(struct TreeNode*& ptrHead) {
+    if (ptrHead == nullptr) {
+        return;
+    }
+
+    struct TreeNode* ptrList = nullptr;
+    treeToList(ptrHead, ptrList);
+
+    int iSize = 0;
+    struct TreeNode* ptrCurrent = ptrList;
+    while (ptrCurrent != nullptr) {
+        iSize++;
+        ptrCurrent = ptrCurrent->ptrRight;
+    }
+
+    // Hibbard's increments
+    int iGap = 1;
+    while (iGap < iSize) {
+        iGap = 2*iGap + 1;
+    }
+    iGap /= 2;
+
+    // Ordena a lista com os incrementos de Hibbard
+    while (iGap > 0) {
+        insertionGapSort(ptrList, iSize, iGap);
+        iGap /= 2;
+    }
 
     ptrHead = ptrList;
 }
-
