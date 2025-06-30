@@ -1,0 +1,4729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_07c9fa41ef1dbd8316cf8bb22ecb0c51 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+             <h3 align="center" style="font-size:20px"><b>Ocorrências de obstáculos fixos na calçada</b></h3>
+             
+    
+            <div class="folium-map" id="map_07c9fa41ef1dbd8316cf8bb22ecb0c51" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_07c9fa41ef1dbd8316cf8bb22ecb0c51 = L.map(
+                "map_07c9fa41ef1dbd8316cf8bb22ecb0c51",
+                {
+                    center: [-22.900252, -43.178084],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 20,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_74399bc6ae5261c18f7bbf2e727bf615 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_74399bc6ae5261c18f7bbf2e727bf615.addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+        
+    
+            var marker_cluster_1093e3c9689a880214baeca989e97bc0 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_0e504a27aad4fe8d747622eb4357a71b = L.marker(
+                [-22.8946351, -43.1861363],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_5bcd18a09c4c0c6c652cac9414424d3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1221a3c1d2a33efc7cdcd66f759cb94c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_490ae2b4eb2b24eff6ad3d15bfb90b5e = $(`<div id="html_490ae2b4eb2b24eff6ad3d15bfb90b5e" style="width: 100.0%; height: 100.0%;">     Protocolo = 24615125-8<br>     Endereço = Avenida Rodrigues Alves, 455<br>     Ponto de referência = Em frente da Rio Star - Roda gigante<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Em andamento<br>     <img src='fotos/24615125-8.jpeg'></div>`)[0];
+                popup_1221a3c1d2a33efc7cdcd66f759cb94c.setContent(html_490ae2b4eb2b24eff6ad3d15bfb90b5e);
+            
+        
+
+        marker_0e504a27aad4fe8d747622eb4357a71b.bindPopup(popup_1221a3c1d2a33efc7cdcd66f759cb94c)
+        ;
+
+        
+    
+    
+                marker_0e504a27aad4fe8d747622eb4357a71b.setIcon(icon_5bcd18a09c4c0c6c652cac9414424d3e);
+            
+    
+            var marker_6ab53e77effe4ea5a40ec73fb8dc9e79 = L.marker(
+                [-22.900189, -43.1771757],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_b150acf1c4b60deb62d3e94b3c8cdf62 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98be0ffbadc44fb0db044adc91ba734f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8d2331115cc61a08d3ff95c104d16c9b = $(`<div id="html_8d2331115cc61a08d3ff95c104d16c9b" style="width: 100.0%; height: 100.0%;">     Protocolo = 25036896-5<br>     Endereço = Av. Presidente Vargas, 100 (Candelária)<br>     Ponto de referência = Em frente Agência do Santander<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = NOVO CHAMADO<br>     Status 2 = Em andamento<br>     <img src='fotos/25036896-5.jpeg'></div>`)[0];
+                popup_98be0ffbadc44fb0db044adc91ba734f.setContent(html_8d2331115cc61a08d3ff95c104d16c9b);
+            
+        
+
+        marker_6ab53e77effe4ea5a40ec73fb8dc9e79.bindPopup(popup_98be0ffbadc44fb0db044adc91ba734f)
+        ;
+
+        
+    
+    
+                marker_6ab53e77effe4ea5a40ec73fb8dc9e79.setIcon(icon_b150acf1c4b60deb62d3e94b3c8cdf62);
+            
+    
+            var marker_c9c26c4696ff815496c7a805c2783b6b = L.marker(
+                [-22.9039554, -43.1778934],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_7d0fb6d1e3969b2a00eb6ae6d1944654 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59b1d72c233896a7ab6c7499eb5672d2 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_b80f02c7ee2fb57f8695d447a5f1e05e = $(`<div id="html_b80f02c7ee2fb57f8695d447a5f1e05e" style="width: 100.0%; height: 100.0%;">     Protocolo = 26325658-2<br>     Endereço = Avenida Rio Branco, 123<br>     Ponto de referência = Esquina com rua do Ouvidor. Ao lado da agência do Itaú.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Em andamento<br>     </div>`)[0];
+                popup_59b1d72c233896a7ab6c7499eb5672d2.setContent(html_b80f02c7ee2fb57f8695d447a5f1e05e);
+            
+        
+
+        marker_c9c26c4696ff815496c7a805c2783b6b.bindPopup(popup_59b1d72c233896a7ab6c7499eb5672d2)
+        ;
+
+        
+    
+    
+                marker_c9c26c4696ff815496c7a805c2783b6b.setIcon(icon_7d0fb6d1e3969b2a00eb6ae6d1944654);
+            
+    
+            var marker_b105c0742ffd02e115a4eb811ee68db1 = L.marker(
+                [-22.905027, -43.1774775],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_10c8a9fa8f2168e3830a4d0f8fddc110 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58077de55d4e13f2f6407f1e7c0c0c15 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_484ceed53cb41974199ec8cd397d4032 = $(`<div id="html_484ceed53cb41974199ec8cd397d4032" style="width: 100.0%; height: 100.0%;">     Protocolo = 26460942-6<br>     Endereço = Avenida Rio Branco, 143<br>     Ponto de referência = Esquina com rua Sete de Setembro<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Em andamento<br>     </div>`)[0];
+                popup_58077de55d4e13f2f6407f1e7c0c0c15.setContent(html_484ceed53cb41974199ec8cd397d4032);
+            
+        
+
+        marker_b105c0742ffd02e115a4eb811ee68db1.bindPopup(popup_58077de55d4e13f2f6407f1e7c0c0c15)
+        ;
+
+        
+    
+    
+                marker_b105c0742ffd02e115a4eb811ee68db1.setIcon(icon_10c8a9fa8f2168e3830a4d0f8fddc110);
+            
+    
+            var marker_1f23f63b385c90670534eedfebea5f96 = L.marker(
+                [-22.9047778, -43.1750844],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_e56f8a91a1d1b104e5cb2686cbcf34ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a91678c3d0717d0686e1e47168486b46 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_5c83007e8c4c875eff1711367d851cea = $(`<div id="html_5c83007e8c4c875eff1711367d851cea" style="width: 100.0%; height: 100.0%;">     Protocolo = 29100334-4<br>     Endereço = Rua do Carmo, 6<br>     Ponto de referência = Esquina com rua da Assembleia <br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_a91678c3d0717d0686e1e47168486b46.setContent(html_5c83007e8c4c875eff1711367d851cea);
+            
+        
+
+        marker_1f23f63b385c90670534eedfebea5f96.bindPopup(popup_a91678c3d0717d0686e1e47168486b46)
+        ;
+
+        
+    
+    
+                marker_1f23f63b385c90670534eedfebea5f96.setIcon(icon_e56f8a91a1d1b104e5cb2686cbcf34ab);
+            
+    
+            var marker_1063693c7261643bf44f6a8f4f990825 = L.marker(
+                [-22.9028166, -43.1763573],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_187ff33b89784522355fd8eb6dfad60f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_813772f8639d716a6480846f74d1d3d1 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3e963bf4d6bad7ea31387e21b4ab054f = $(`<div id="html_3e963bf4d6bad7ea31387e21b4ab054f" style="width: 100.0%; height: 100.0%;">     Protocolo = 29100352-4<br>     Endereço = Rua do Ouvidor, 63<br>     Ponto de referência = esquina com rua do Carmo<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_813772f8639d716a6480846f74d1d3d1.setContent(html_3e963bf4d6bad7ea31387e21b4ab054f);
+            
+        
+
+        marker_1063693c7261643bf44f6a8f4f990825.bindPopup(popup_813772f8639d716a6480846f74d1d3d1)
+        ;
+
+        
+    
+    
+                marker_1063693c7261643bf44f6a8f4f990825.setIcon(icon_187ff33b89784522355fd8eb6dfad60f);
+            
+    
+            var marker_45e49543dcdc3ba6730b695b0815f206 = L.marker(
+                [-22.9031868, -43.1761535],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_a1c47bb1e3800a9c2aed1a0feaf20103 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37d48f8cbcff0aef447179e5712ccd37 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_536a197aa5890c4b7aa8709a48e16feb = $(`<div id="html_536a197aa5890c4b7aa8709a48e16feb" style="width: 100.0%; height: 100.0%;">     Protocolo = 29100405-1<br>     Endereço = Beco dos barbeiros, 12<br>     Ponto de referência = Esquina com rua do Carmo<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_37d48f8cbcff0aef447179e5712ccd37.setContent(html_536a197aa5890c4b7aa8709a48e16feb);
+            
+        
+
+        marker_45e49543dcdc3ba6730b695b0815f206.bindPopup(popup_37d48f8cbcff0aef447179e5712ccd37)
+        ;
+
+        
+    
+    
+                marker_45e49543dcdc3ba6730b695b0815f206.setIcon(icon_a1c47bb1e3800a9c2aed1a0feaf20103);
+            
+    
+            var marker_1186d86ed26f2d230cb4aca405e18715 = L.marker(
+                [-22.9050066, -43.1753086],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_f2ff96f3a842fe3711398dc1177a4fb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd7e704c9ad1f6d31ae90b1ae410f0cd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_da3ecb2603de1f92a02f43fb2200c7fe = $(`<div id="html_da3ecb2603de1f92a02f43fb2200c7fe" style="width: 100.0%; height: 100.0%;">     Protocolo = 29100412-5<br>     Endereço = Rua do Carmo, 7<br>     Ponto de referência = Esquina com Sete de Setembro<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_cd7e704c9ad1f6d31ae90b1ae410f0cd.setContent(html_da3ecb2603de1f92a02f43fb2200c7fe);
+            
+        
+
+        marker_1186d86ed26f2d230cb4aca405e18715.bindPopup(popup_cd7e704c9ad1f6d31ae90b1ae410f0cd)
+        ;
+
+        
+    
+    
+                marker_1186d86ed26f2d230cb4aca405e18715.setIcon(icon_f2ff96f3a842fe3711398dc1177a4fb9);
+            
+    
+            var marker_02d3e90d018b51ba25f8e3ee566a18e2 = L.marker(
+                [-22.8965076, -43.1692648],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_4a4467dd1efe4c019222e63e3f2ece03 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18917a8c0432801ac3dda78d839c6913 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_678609b4e09a099a661827448bba5958 = $(`<div id="html_678609b4e09a099a661827448bba5958" style="width: 100.0%; height: 100.0%;">     Protocolo = 29132523-8<br>     Endereço = Almirante Barroso, 63<br>     Ponto de referência = Próximo a Drogaria Venâncio. Esquina com Avenida Rio Branco.<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_18917a8c0432801ac3dda78d839c6913.setContent(html_678609b4e09a099a661827448bba5958);
+            
+        
+
+        marker_02d3e90d018b51ba25f8e3ee566a18e2.bindPopup(popup_18917a8c0432801ac3dda78d839c6913)
+        ;
+
+        
+    
+    
+                marker_02d3e90d018b51ba25f8e3ee566a18e2.setIcon(icon_4a4467dd1efe4c019222e63e3f2ece03);
+            
+    
+            var marker_f42b21bd51ec3bc26afc0e2c6174ed85 = L.marker(
+                [-22.9023869, -43.1774147],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_3ec321e85bcd14cf5ade66de1804f6b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e05cc975262cac3c29f8889f3e21217d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c5b87b021cfac45c7b5756a8ba8a9942 = $(`<div id="html_c5b87b021cfac45c7b5756a8ba8a9942" style="width: 100.0%; height: 100.0%;">     Protocolo = 29147014-8<br>     Endereço = Rua da Quitanda, 90 <br>     Ponto de referência = Esquina com rua do Rosário. Em frente antiga ESPM.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e05cc975262cac3c29f8889f3e21217d.setContent(html_c5b87b021cfac45c7b5756a8ba8a9942);
+            
+        
+
+        marker_f42b21bd51ec3bc26afc0e2c6174ed85.bindPopup(popup_e05cc975262cac3c29f8889f3e21217d)
+        ;
+
+        
+    
+    
+                marker_f42b21bd51ec3bc26afc0e2c6174ed85.setIcon(icon_3ec321e85bcd14cf5ade66de1804f6b5);
+            
+    
+            var marker_acfa95ab9ab539fb9aac646e3771a785 = L.marker(
+                [-22.8985068, -43.1798436],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_74569e036f3da379f089e2ab9a521b19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d674920a82c709259a8c92e481b5a405 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_71bdfff82c8c18eb784112c594717c77 = $(`<div id="html_71bdfff82c8c18eb784112c594717c77" style="width: 100.0%; height: 100.0%;">     Protocolo = 29174319-5<br>     Endereço = Avenida Rio Branco, 25<br>     Ponto de referência = Em frente a Peepou Centro<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_d674920a82c709259a8c92e481b5a405.setContent(html_71bdfff82c8c18eb784112c594717c77);
+            
+        
+
+        marker_acfa95ab9ab539fb9aac646e3771a785.bindPopup(popup_d674920a82c709259a8c92e481b5a405)
+        ;
+
+        
+    
+    
+                marker_acfa95ab9ab539fb9aac646e3771a785.setIcon(icon_74569e036f3da379f089e2ab9a521b19);
+            
+    
+            var marker_223019a21886c11f31056188350d632f = L.marker(
+                [-22.9056077, -43.1761831],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_7fd789c402509f57278e32a998253c50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bc5102c3c6ff9d20e3f67dc7e319ca4 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7f85eae48dbbc4d16abf3eb9c4f64104 = $(`<div id="html_7f85eae48dbbc4d16abf3eb9c4f64104" style="width: 100.0%; height: 100.0%;">     Protocolo = 29199132-0<br>     Endereço = Rua São José, 70<br>     Ponto de referência = Em frente à Caixa Econômica<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_9bc5102c3c6ff9d20e3f67dc7e319ca4.setContent(html_7f85eae48dbbc4d16abf3eb9c4f64104);
+            
+        
+
+        marker_223019a21886c11f31056188350d632f.bindPopup(popup_9bc5102c3c6ff9d20e3f67dc7e319ca4)
+        ;
+
+        
+    
+    
+                marker_223019a21886c11f31056188350d632f.setIcon(icon_7fd789c402509f57278e32a998253c50);
+            
+    
+            var marker_9cffd5c4a011ac8ce8efb10d804ba173 = L.marker(
+                [-22.9029033, -43.1752644],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_1fcd6d4319a98bb27d5b3031141a8fba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2f88e536d350b4dca0bfc341540096b = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_aa28c8feda70f9fb68ad8cd914344597 = $(`<div id="html_aa28c8feda70f9fb68ad8cd914344597" style="width: 100.0%; height: 100.0%;">     Protocolo = 29199157-8<br>     Endereço = Rua Primeiro de Março, 6<br>     Ponto de referência = Próximo da Praça XV<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e2f88e536d350b4dca0bfc341540096b.setContent(html_aa28c8feda70f9fb68ad8cd914344597);
+            
+        
+
+        marker_9cffd5c4a011ac8ce8efb10d804ba173.bindPopup(popup_e2f88e536d350b4dca0bfc341540096b)
+        ;
+
+        
+    
+    
+                marker_9cffd5c4a011ac8ce8efb10d804ba173.setIcon(icon_1fcd6d4319a98bb27d5b3031141a8fba);
+            
+    
+            var marker_1e5e1ec0a56726cd8936e72e369ec420 = L.marker(
+                [-22.911262, -43.1761164],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_91d1540bb447ac84bd361788798872a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_17f06b7b749e9a29b1a09a8b4171fb2a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_39b91d33f282f467cc51ed65575d2201 = $(`<div id="html_39b91d33f282f467cc51ed65575d2201" style="width: 100.0%; height: 100.0%;">     Protocolo = 29325313-0<br>     Endereço = Avenida Rio Branco, 19<br>     Ponto de referência = Esquina com Dom Gerardo<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_17f06b7b749e9a29b1a09a8b4171fb2a.setContent(html_39b91d33f282f467cc51ed65575d2201);
+            
+        
+
+        marker_1e5e1ec0a56726cd8936e72e369ec420.bindPopup(popup_17f06b7b749e9a29b1a09a8b4171fb2a)
+        ;
+
+        
+    
+    
+                marker_1e5e1ec0a56726cd8936e72e369ec420.setIcon(icon_91d1540bb447ac84bd361788798872a5);
+            
+    
+            var marker_414567e7a6043b1ab909a0921873ce60 = L.marker(
+                [-22.905027, -43.1774775],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_16de45e769fdac7c39e1d5a1aa7c903b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1060d7621f32a7d313c1d5d59990405 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_019ebe0d82ed3451dbb01a4b15887f0e = $(`<div id="html_019ebe0d82ed3451dbb01a4b15887f0e" style="width: 100.0%; height: 100.0%;">     Protocolo = 29336230-4<br>     Endereço = Avenida Rio Branco, 143<br>     Ponto de referência = Esquina com Sete de Setembro. Próximo dos trilhos do VLT.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_f1060d7621f32a7d313c1d5d59990405.setContent(html_019ebe0d82ed3451dbb01a4b15887f0e);
+            
+        
+
+        marker_414567e7a6043b1ab909a0921873ce60.bindPopup(popup_f1060d7621f32a7d313c1d5d59990405)
+        ;
+
+        
+    
+    
+                marker_414567e7a6043b1ab909a0921873ce60.setIcon(icon_16de45e769fdac7c39e1d5a1aa7c903b);
+            
+    
+            var marker_f40e16c249541a32342db4bfabf97b68 = L.marker(
+                [-22.9014621, -43.1777899],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_6594ac6edda7b6cd49f4867692253918 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2bb1e05e72e72fc494ce12a501e7426 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c6a9d97695420832343d4e7fa94fa003 = $(`<div id="html_c6a9d97695420832343d4e7fa94fa003" style="width: 100.0%; height: 100.0%;">     Protocolo = 29365157-8<br>     Endereço = Pio X,119<br>     Ponto de referência = Esquina com rua da Quitanda<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_d2bb1e05e72e72fc494ce12a501e7426.setContent(html_c6a9d97695420832343d4e7fa94fa003);
+            
+        
+
+        marker_f40e16c249541a32342db4bfabf97b68.bindPopup(popup_d2bb1e05e72e72fc494ce12a501e7426)
+        ;
+
+        
+    
+    
+                marker_f40e16c249541a32342db4bfabf97b68.setIcon(icon_6594ac6edda7b6cd49f4867692253918);
+            
+    
+            var marker_3e800a5a112ceb0755f91b576fbb2688 = L.marker(
+                [-22.9014551, -43.1765211],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_78cc5724414226933361689081486d0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c20f5821820152bd8f392601294ea85 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_cf3d48fd0d55a2b519336359e130ab19 = $(`<div id="html_cf3d48fd0d55a2b519336359e130ab19" style="width: 100.0%; height: 100.0%;">     Protocolo = 29402112-0<br>     Endereço = Rua da Alfândega, 3<br>     Ponto de referência = Esquina com Primeiro de Março<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_0c20f5821820152bd8f392601294ea85.setContent(html_cf3d48fd0d55a2b519336359e130ab19);
+            
+        
+
+        marker_3e800a5a112ceb0755f91b576fbb2688.bindPopup(popup_0c20f5821820152bd8f392601294ea85)
+        ;
+
+        
+    
+    
+                marker_3e800a5a112ceb0755f91b576fbb2688.setIcon(icon_78cc5724414226933361689081486d0b);
+            
+    
+            var marker_46bff79dcce35395dff1ee532ec7be3b = L.marker(
+                [-22.9041923, -43.1767333],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_da660615dd6370089e6e0d07cab89731 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4133bd4b8cf4f9772431dd260f09e20a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_04cff04c7fc5b695fea068aaecb159b2 = $(`<div id="html_04cff04c7fc5b695fea068aaecb159b2" style="width: 100.0%; height: 100.0%;">     Protocolo = 29558109-0<br>     Endereço = Sete de Setembro, 48<br>     Ponto de referência = Em frente à loja Constance<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_4133bd4b8cf4f9772431dd260f09e20a.setContent(html_04cff04c7fc5b695fea068aaecb159b2);
+            
+        
+
+        marker_46bff79dcce35395dff1ee532ec7be3b.bindPopup(popup_4133bd4b8cf4f9772431dd260f09e20a)
+        ;
+
+        
+    
+    
+                marker_46bff79dcce35395dff1ee532ec7be3b.setIcon(icon_da660615dd6370089e6e0d07cab89731);
+            
+    
+            var marker_0def302b20df6cfff84fb6a299417607 = L.marker(
+                [-22.9052205, -43.176146],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_5609e3533f35d87d4cf79f3e44976e1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_502a09a762a3fe7f0b976cd31d66663e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_de207d8318b4073fe821b3a737ff7c0f = $(`<div id="html_de207d8318b4073fe821b3a737ff7c0f" style="width: 100.0%; height: 100.0%;">     Protocolo = 29647507-0<br>     Endereço = Rua da Quitanda, 11<br>     Ponto de referência = Esquina com rua da Assembleia. Em frente drogaria Cristal.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_502a09a762a3fe7f0b976cd31d66663e.setContent(html_de207d8318b4073fe821b3a737ff7c0f);
+            
+        
+
+        marker_0def302b20df6cfff84fb6a299417607.bindPopup(popup_502a09a762a3fe7f0b976cd31d66663e)
+        ;
+
+        
+    
+    
+                marker_0def302b20df6cfff84fb6a299417607.setIcon(icon_5609e3533f35d87d4cf79f3e44976e1b);
+            
+    
+            var marker_010b25ef96deff84755d30c9b8b5a34b = L.marker(
+                [-22.9049404, -43.1725507],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_dc7ef4048f72fe424750b64bf81528cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac0e44a340680a242909842f7c89c493 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_60a7491d2098922372fef3319bba17a6 = $(`<div id="html_60a7491d2098922372fef3319bba17a6" style="width: 100.0%; height: 100.0%;">     Protocolo = 29684978-6<br>     Endereço = Dom Manuel, s/n<br>     Ponto de referência = Próximo da ALERJ, esquina com Praça XV<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_ac0e44a340680a242909842f7c89c493.setContent(html_60a7491d2098922372fef3319bba17a6);
+            
+        
+
+        marker_010b25ef96deff84755d30c9b8b5a34b.bindPopup(popup_ac0e44a340680a242909842f7c89c493)
+        ;
+
+        
+    
+    
+                marker_010b25ef96deff84755d30c9b8b5a34b.setIcon(icon_dc7ef4048f72fe424750b64bf81528cb);
+            
+    
+            var marker_74191fcfacd040403f9555701e0c86da = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_1f0c788980f2c1a89e4a295865ec562a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_240613079208b0c24419c790a39a215b = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_944b6b92459de96fb81b16b69ed35723 = $(`<div id="html_944b6b92459de96fb81b16b69ed35723" style="width: 100.0%; height: 100.0%;">     Protocolo = 29767590-0<br>     Endereço = Praça XV, 20<br>     Ponto de referência = Próximo da entrada da estação do VLT <br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_240613079208b0c24419c790a39a215b.setContent(html_944b6b92459de96fb81b16b69ed35723);
+            
+        
+
+        marker_74191fcfacd040403f9555701e0c86da.bindPopup(popup_240613079208b0c24419c790a39a215b)
+        ;
+
+        
+    
+    
+                marker_74191fcfacd040403f9555701e0c86da.setIcon(icon_1f0c788980f2c1a89e4a295865ec562a);
+            
+    
+            var marker_62cd2efaaf616fa9792afdc7699dd71f = L.marker(
+                [-22.910193, -43.1729945],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_14db49921679f8d483d0f92c64e25071 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b58d25f9c2afd59ed6d816e7159b465d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7be9aa40f871ac7834d6b8cdd784050e = $(`<div id="html_7be9aa40f871ac7834d6b8cdd784050e" style="width: 100.0%; height: 100.0%;">     Protocolo = 30026812-5<br>     Endereço = Santa Luzia, 583<br>     Ponto de referência = Ocorrência localizada na Praça Manuel Bandeira<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_b58d25f9c2afd59ed6d816e7159b465d.setContent(html_7be9aa40f871ac7834d6b8cdd784050e);
+            
+        
+
+        marker_62cd2efaaf616fa9792afdc7699dd71f.bindPopup(popup_b58d25f9c2afd59ed6d816e7159b465d)
+        ;
+
+        
+    
+    
+                marker_62cd2efaaf616fa9792afdc7699dd71f.setIcon(icon_14db49921679f8d483d0f92c64e25071);
+            
+    
+            var marker_658227214e0d0b73e8a839ca8f8ef8a9 = L.marker(
+                [-22.9081815, -43.1707355],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_ea80d9cbc6697b9bb2625d7a221cc783 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_903a1b40e7d54d89d33633508ce1aa49 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_1102cb2cd5b731116cd50a6d153b6cee = $(`<div id="html_1102cb2cd5b731116cd50a6d153b6cee" style="width: 100.0%; height: 100.0%;">     Protocolo = 30184206-2<br>     Endereço = Avenida Marechal Câmara, 233<br>     Ponto de referência = ocorrência localizada na divisão da rua. Do outro lado da calçada está localizado o Comando da Aeronáutica. <br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_903a1b40e7d54d89d33633508ce1aa49.setContent(html_1102cb2cd5b731116cd50a6d153b6cee);
+            
+        
+
+        marker_658227214e0d0b73e8a839ca8f8ef8a9.bindPopup(popup_903a1b40e7d54d89d33633508ce1aa49)
+        ;
+
+        
+    
+    
+                marker_658227214e0d0b73e8a839ca8f8ef8a9.setIcon(icon_ea80d9cbc6697b9bb2625d7a221cc783);
+            
+    
+            var marker_b9cebe3c5e125b0cdec8eef69c24a9ad = L.marker(
+                [-22.9106898, -43.1762297],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_02e339634b2f94b5c7a3f76e779dd542 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c4a78548d3ddde2976537aef63d80e3 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_14520b03f213c1553caa2ac043777149 = $(`<div id="html_14520b03f213c1553caa2ac043777149" style="width: 100.0%; height: 100.0%;">     Protocolo = 30258459-2<br>     Endereço = Praça Floriano, s/n<br>     Ponto de referência = Esquina Rua Alcindo Guanabara<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_0c4a78548d3ddde2976537aef63d80e3.setContent(html_14520b03f213c1553caa2ac043777149);
+            
+        
+
+        marker_b9cebe3c5e125b0cdec8eef69c24a9ad.bindPopup(popup_0c4a78548d3ddde2976537aef63d80e3)
+        ;
+
+        
+    
+    
+                marker_b9cebe3c5e125b0cdec8eef69c24a9ad.setIcon(icon_02e339634b2f94b5c7a3f76e779dd542);
+            
+    
+            var marker_32442061d18eea28d34041cd2652d482 = L.marker(
+                [-22.9033016, -43.1780808],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_7a4dbf367fcb6c7504440e2dfb914f13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c47dfdc83a0cf76c6e82b531e8ed1a74 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_4df1f1b03491bf7f52e6929500c9de24 = $(`<div id="html_4df1f1b03491bf7f52e6929500c9de24" style="width: 100.0%; height: 100.0%;">     Protocolo = 30260876-6<br>     Endereço = Avenida Rio Branco, 115<br>     Ponto de referência = Em frente ao antigo Work Café Santander<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_c47dfdc83a0cf76c6e82b531e8ed1a74.setContent(html_4df1f1b03491bf7f52e6929500c9de24);
+            
+        
+
+        marker_32442061d18eea28d34041cd2652d482.bindPopup(popup_c47dfdc83a0cf76c6e82b531e8ed1a74)
+        ;
+
+        
+    
+    
+                marker_32442061d18eea28d34041cd2652d482.setIcon(icon_7a4dbf367fcb6c7504440e2dfb914f13);
+            
+    
+            var marker_d8bc531903ff728b311f8e7de9e72646 = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_946ef9f734651be298d46bc20e69b94d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_35f3a2d41b8cfd05b07e38de8123390a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_e6437c7b23e27562ec8c76afedb07d5c = $(`<div id="html_e6437c7b23e27562ec8c76afedb07d5c" style="width: 100.0%; height: 100.0%;">     Protocolo = 30436968-5<br>     Endereço = Praça XV, 42<br>     Ponto de referência = Em frente ao IBAMA<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_35f3a2d41b8cfd05b07e38de8123390a.setContent(html_e6437c7b23e27562ec8c76afedb07d5c);
+            
+        
+
+        marker_d8bc531903ff728b311f8e7de9e72646.bindPopup(popup_35f3a2d41b8cfd05b07e38de8123390a)
+        ;
+
+        
+    
+    
+                marker_d8bc531903ff728b311f8e7de9e72646.setIcon(icon_946ef9f734651be298d46bc20e69b94d);
+            
+    
+            var marker_b76a6032ef9b08316017757680785875 = L.marker(
+                [-22.9078688, -43.1729406],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_636032bd80c7d34d48ec953c1043e423 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc0ad776d917818c1b9039422d0eccac = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_db530488a3e99792cbec608ebd7e61b7 = $(`<div id="html_db530488a3e99792cbec608ebd7e61b7" style="width: 100.0%; height: 100.0%;">     Protocolo = 30436986-5<br>     Endereço = Avenida Presidente Antônio Carlos, s/n<br>     Ponto de referência = Esquina com rua da Assembleia, 11. Próximo do Sistema OCB/RJ. Ocorrência localizada na esquina da rua.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_bc0ad776d917818c1b9039422d0eccac.setContent(html_db530488a3e99792cbec608ebd7e61b7);
+            
+        
+
+        marker_b76a6032ef9b08316017757680785875.bindPopup(popup_bc0ad776d917818c1b9039422d0eccac)
+        ;
+
+        
+    
+    
+                marker_b76a6032ef9b08316017757680785875.setIcon(icon_636032bd80c7d34d48ec953c1043e423);
+            
+    
+            var marker_54437972636964aa9e3c068a57dc583b = L.marker(
+                [-22.9017538, -43.1774027],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_8a2c43e9bd513c132a7e09bae02142ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca3c6b1f3a070e293a39a4fa429c9ffd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_561486b32c75a67c6b3b454a97bced33 = $(`<div id="html_561486b32c75a67c6b3b454a97bced33" style="width: 100.0%; height: 100.0%;">     Protocolo = 30558191-0<br>     Endereço = Rua da Alfândega, 25<br>     Ponto de referência = Do outro lado da rua está localizado o  Edifício Danilo Soares da Silva<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_ca3c6b1f3a070e293a39a4fa429c9ffd.setContent(html_561486b32c75a67c6b3b454a97bced33);
+            
+        
+
+        marker_54437972636964aa9e3c068a57dc583b.bindPopup(popup_ca3c6b1f3a070e293a39a4fa429c9ffd)
+        ;
+
+        
+    
+    
+                marker_54437972636964aa9e3c068a57dc583b.setIcon(icon_8a2c43e9bd513c132a7e09bae02142ee);
+            
+    
+            var marker_c471648d350961c49c50e09deb314dc9 = L.marker(
+                [-22.9014941, -43.177822],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_dc8f3224ced53ef0304b55188c3f449d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d5b4c05c0b1cf428c64051e757f955d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3c8472b48e6b74fd69d5a6397f80dd1d = $(`<div id="html_3c8472b48e6b74fd69d5a6397f80dd1d" style="width: 100.0%; height: 100.0%;">     Protocolo = 30580657-0<br>     Endereço = Pio X, 119<br>     Ponto de referência = Esquina com rua da Quitanda<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_4d5b4c05c0b1cf428c64051e757f955d.setContent(html_3c8472b48e6b74fd69d5a6397f80dd1d);
+            
+        
+
+        marker_c471648d350961c49c50e09deb314dc9.bindPopup(popup_4d5b4c05c0b1cf428c64051e757f955d)
+        ;
+
+        
+    
+    
+                marker_c471648d350961c49c50e09deb314dc9.setIcon(icon_dc8f3224ced53ef0304b55188c3f449d);
+            
+    
+            var marker_e129e1c37d6ba8102c4ee24ae40a5527 = L.marker(
+                [-22.9018054, -43.1766926],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_41ff04e07faff648a3f767cf70d52a8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e4e84c2a8155aea13bd2d3eebcc4c2fa = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_6fd56a7c639a95eef0037b4aacc158da = $(`<div id="html_6fd56a7c639a95eef0037b4aacc158da" style="width: 100.0%; height: 100.0%;">     Protocolo = 30580709-0<br>     Endereço = Buenos Aires, 4<br>     Ponto de referência = Esquina com Primeiro de Março<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e4e84c2a8155aea13bd2d3eebcc4c2fa.setContent(html_6fd56a7c639a95eef0037b4aacc158da);
+            
+        
+
+        marker_e129e1c37d6ba8102c4ee24ae40a5527.bindPopup(popup_e4e84c2a8155aea13bd2d3eebcc4c2fa)
+        ;
+
+        
+    
+    
+                marker_e129e1c37d6ba8102c4ee24ae40a5527.setIcon(icon_41ff04e07faff648a3f767cf70d52a8f);
+            
+    
+            var marker_61c7ab2f8709102b7974cfce3de8b6ce = L.marker(
+                [-22.9083942, -43.1740729],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_34752fb4a3785494982bb315903a37c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58f149b73ba554e44a295df33e0eb1b0 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_106888b37eb89ac988113254ff40ada1 = $(`<div id="html_106888b37eb89ac988113254ff40ada1" style="width: 100.0%; height: 100.0%;">     Protocolo = 30614514-4<br>     Endereço = Graça Aranha, 170<br>     Ponto de referência = Esquina com Araújo Porto Alegre<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_58f149b73ba554e44a295df33e0eb1b0.setContent(html_106888b37eb89ac988113254ff40ada1);
+            
+        
+
+        marker_61c7ab2f8709102b7974cfce3de8b6ce.bindPopup(popup_58f149b73ba554e44a295df33e0eb1b0)
+        ;
+
+        
+    
+    
+                marker_61c7ab2f8709102b7974cfce3de8b6ce.setIcon(icon_34752fb4a3785494982bb315903a37c4);
+            
+    
+            var marker_2750ebe316f1a365ebd950f06ad5740a = L.marker(
+                [-22.9088394, -43.1711971],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_486b6934c6de47373768af84c2e064d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fa31f6c4d5d734e1ed79d79a22bbc06 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ad486412237e169e6fa7de5314434a88 = $(`<div id="html_ad486412237e169e6fa7de5314434a88" style="width: 100.0%; height: 100.0%;">     Protocolo = 30729588-5<br>     Endereço = Avenida Churchill, 97<br>     Ponto de referência = Na calçada do SINMED/RJ - Sindicato dos Médicos do Rio Janeiro<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_0fa31f6c4d5d734e1ed79d79a22bbc06.setContent(html_ad486412237e169e6fa7de5314434a88);
+            
+        
+
+        marker_2750ebe316f1a365ebd950f06ad5740a.bindPopup(popup_0fa31f6c4d5d734e1ed79d79a22bbc06)
+        ;
+
+        
+    
+    
+                marker_2750ebe316f1a365ebd950f06ad5740a.setIcon(icon_486b6934c6de47373768af84c2e064d0);
+            
+    
+            var marker_24e10c92a2826c7eb197ff719aa8b267 = L.marker(
+                [-22.8972557, -43.1810349],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_25ace8eb2066a7e30e2ab6090a5a5ed6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f63ab4b0a7b66899d2fdf3f315b8e4eb = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_a3302317d8eab9f8fafd44112d365182 = $(`<div id="html_a3302317d8eab9f8fafd44112d365182" style="width: 100.0%; height: 100.0%;">     Protocolo = 30769636-5<br>     Endereço = Praça Mauá, 7<br>     Ponto de referência = Esquina com Avenida Rio Branco<br>     Região = 1<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_f63ab4b0a7b66899d2fdf3f315b8e4eb.setContent(html_a3302317d8eab9f8fafd44112d365182);
+            
+        
+
+        marker_24e10c92a2826c7eb197ff719aa8b267.bindPopup(popup_f63ab4b0a7b66899d2fdf3f315b8e4eb)
+        ;
+
+        
+    
+    
+                marker_24e10c92a2826c7eb197ff719aa8b267.setIcon(icon_25ace8eb2066a7e30e2ab6090a5a5ed6);
+            
+    
+            var marker_9801b16fc81e22b3354f3ade68381f62 = L.marker(
+                [-22.9053085, -43.1778736],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_f0544dd32a14511546d64cc0e2ffcac5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36a17506aec94af00e7ad2f184aa4ee1 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_973469d69e98a0c81b679e59ffe55c9f = $(`<div id="html_973469d69e98a0c81b679e59ffe55c9f" style="width: 100.0%; height: 100.0%;">     Protocolo = 30871941-0<br>     Endereço = Avenida Rio Branco, 128<br>     Ponto de referência = Próximo do meio-fio<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_36a17506aec94af00e7ad2f184aa4ee1.setContent(html_973469d69e98a0c81b679e59ffe55c9f);
+            
+        
+
+        marker_9801b16fc81e22b3354f3ade68381f62.bindPopup(popup_36a17506aec94af00e7ad2f184aa4ee1)
+        ;
+
+        
+    
+    
+                marker_9801b16fc81e22b3354f3ade68381f62.setIcon(icon_f0544dd32a14511546d64cc0e2ffcac5);
+            
+    
+            var marker_81fe3ad859644d37376e1129454ee778 = L.marker(
+                [-22.9105851, -43.186646],
+                {
+}
+            ).addTo(marker_cluster_1093e3c9689a880214baeca989e97bc0);
+        
+    
+            var icon_a10a469c06364a48613b41f397479d76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92e75c70d891acdae83315910f1732ff = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7767dedcb37b5a988bc54bf7f95411b9 = $(`<div id="html_7767dedcb37b5a988bc54bf7f95411b9" style="width: 100.0%; height: 100.0%;">     Protocolo = 30915546-0<br>     Endereço =  Rua Didimo, s/n<br>     Ponto de referência = Esquina com Rua do Senado<br>     Região = 3<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     <img src='fotos/30915546-0.jpg'></div>`)[0];
+                popup_92e75c70d891acdae83315910f1732ff.setContent(html_7767dedcb37b5a988bc54bf7f95411b9);
+            
+        
+
+        marker_81fe3ad859644d37376e1129454ee778.bindPopup(popup_92e75c70d891acdae83315910f1732ff)
+        ;
+
+        
+    
+    
+                marker_81fe3ad859644d37376e1129454ee778.setIcon(icon_a10a469c06364a48613b41f397479d76);
+            
+    
+            marker_cluster_1093e3c9689a880214baeca989e97bc0.addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+        
+    
+            var marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_6c1a0ccd564c7aa0d990b72910422e8f = L.marker(
+                [-22.90495, -43.1758901],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_d00a6fdb8ad579754f88405fceb7587c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc63029df7936ac1388858e5f6c0f60d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_58d27812cbdc3f6ac13461e3980edf74 = $(`<div id="html_58d27812cbdc3f6ac13461e3980edf74" style="width: 100.0%; height: 100.0%;">     Protocolo = 23721808-0<br>     Endereço = Rua da Assembleia, 51<br>     Ponto de referência = Na frente da loja Dufry Shopping<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23721808-0.jpeg'></div>`)[0];
+                popup_bc63029df7936ac1388858e5f6c0f60d.setContent(html_58d27812cbdc3f6ac13461e3980edf74);
+            
+        
+
+        marker_6c1a0ccd564c7aa0d990b72910422e8f.bindPopup(popup_bc63029df7936ac1388858e5f6c0f60d)
+        ;
+
+        
+    
+    
+                marker_6c1a0ccd564c7aa0d990b72910422e8f.setIcon(icon_d00a6fdb8ad579754f88405fceb7587c);
+            
+    
+            var marker_9f960b49792d5543f0d6439444dbc24f = L.marker(
+                [-22.9024562, -43.1760424],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3353971fcfbb0c151b9f6c0b4bcc5347 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4252b691881dbdf9443547e284d76f01 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_d58bb793dcc2bcbba1374cbdbaceac73 = $(`<div id="html_d58bb793dcc2bcbba1374cbdbaceac73" style="width: 100.0%; height: 100.0%;">     Protocolo = 23710214-5<br>     Endereço = Rua do Ouvidor, 48<br>     Ponto de referência = Esquina com a Primeiro de Março<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23710214-5.jpeg'></div>`)[0];
+                popup_4252b691881dbdf9443547e284d76f01.setContent(html_d58bb793dcc2bcbba1374cbdbaceac73);
+            
+        
+
+        marker_9f960b49792d5543f0d6439444dbc24f.bindPopup(popup_4252b691881dbdf9443547e284d76f01)
+        ;
+
+        
+    
+    
+                marker_9f960b49792d5543f0d6439444dbc24f.setIcon(icon_3353971fcfbb0c151b9f6c0b4bcc5347);
+            
+    
+            var marker_bfe89196eba1b35e4ca9ec376c5fbb0b = L.marker(
+                [-22.9023933, -43.1757796],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_886c88456d39ec5fac74d04b5fe5de41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e0a5ea419ec4e55cbcf92b3bda17915 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8cc42c667b2826def6d72540490e3874 = $(`<div id="html_8cc42c667b2826def6d72540490e3874" style="width: 100.0%; height: 100.0%;">     Protocolo = 23705068-0<br>     Endereço = Rua do Ouvidor, 47<br>     Ponto de referência = Próximo a parada do Ouvidor<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23705068-0.jpeg'></div>`)[0];
+                popup_7e0a5ea419ec4e55cbcf92b3bda17915.setContent(html_8cc42c667b2826def6d72540490e3874);
+            
+        
+
+        marker_bfe89196eba1b35e4ca9ec376c5fbb0b.bindPopup(popup_7e0a5ea419ec4e55cbcf92b3bda17915)
+        ;
+
+        
+    
+    
+                marker_bfe89196eba1b35e4ca9ec376c5fbb0b.setIcon(icon_886c88456d39ec5fac74d04b5fe5de41);
+            
+    
+            var marker_0baabf5f0b70d17e704b5a8e679e04e9 = L.marker(
+                [-22.9019812, -43.1736858],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_dc48ad3492162924d62e81e42525383f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_baf9abb34b2629ff5d1691b1b51f3d52 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9c8cfc0db270659e95542e849c10da74 = $(`<div id="html_9c8cfc0db270659e95542e849c10da74" style="width: 100.0%; height: 100.0%;">     Protocolo = 23735944-0<br>     Endereço = Avenida Presidente Vargas, 309<br>     Ponto de referência = Próximo a esquina com a Avenida Rio Branco<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23735944-0.jpeg'></div>`)[0];
+                popup_baf9abb34b2629ff5d1691b1b51f3d52.setContent(html_9c8cfc0db270659e95542e849c10da74);
+            
+        
+
+        marker_0baabf5f0b70d17e704b5a8e679e04e9.bindPopup(popup_baf9abb34b2629ff5d1691b1b51f3d52)
+        ;
+
+        
+    
+    
+                marker_0baabf5f0b70d17e704b5a8e679e04e9.setIcon(icon_dc48ad3492162924d62e81e42525383f);
+            
+    
+            var marker_8f9a195d18d2f8faacce5ed38c18ad30 = L.marker(
+                [-22.9021837, -43.1785422],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3ae008f6830171285aa8aa5496218873 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcdf5c5eca22dc7591b89b0c6e4f88a5 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_a77ab7492887386c4da4b4175f7d79ec = $(`<div id="html_a77ab7492887386c4da4b4175f7d79ec" style="width: 100.0%; height: 100.0%;">     Protocolo = 23724716-0<br>     Endereço = Avenida Rio Branco, 89<br>     Ponto de referência = Em frente ao Manhatan Tower<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     </div>`)[0];
+                popup_fcdf5c5eca22dc7591b89b0c6e4f88a5.setContent(html_a77ab7492887386c4da4b4175f7d79ec);
+            
+        
+
+        marker_8f9a195d18d2f8faacce5ed38c18ad30.bindPopup(popup_fcdf5c5eca22dc7591b89b0c6e4f88a5)
+        ;
+
+        
+    
+    
+                marker_8f9a195d18d2f8faacce5ed38c18ad30.setIcon(icon_3ae008f6830171285aa8aa5496218873);
+            
+    
+            var marker_eeafb1a74fd53c8f8c2344a22b40a77a = L.marker(
+                [-22.8985028, -43.1784109],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_1d60c71fcc617b765bfa2c204046e42d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33f399e259ff1d898f621ef7a9055dcd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_b047902ab3e12dc33105d72c1d74d801 = $(`<div id="html_b047902ab3e12dc33105d72c1d74d801" style="width: 100.0%; height: 100.0%;">     Protocolo = 23747110-4<br>     Endereço = Rua Cortines Laxe, 25<br>     Ponto de referência = Esquina com a Rua Conselheiro Saraíva<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23747110-4.jpeg'></div>`)[0];
+                popup_33f399e259ff1d898f621ef7a9055dcd.setContent(html_b047902ab3e12dc33105d72c1d74d801);
+            
+        
+
+        marker_eeafb1a74fd53c8f8c2344a22b40a77a.bindPopup(popup_33f399e259ff1d898f621ef7a9055dcd)
+        ;
+
+        
+    
+    
+                marker_eeafb1a74fd53c8f8c2344a22b40a77a.setIcon(icon_1d60c71fcc617b765bfa2c204046e42d);
+            
+    
+            var marker_de15d773fdd362ab2ddf9a6fbb55e838 = L.marker(
+                [-22.9024241, -43.1741359],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_70a7bd363fc932080185c16725235f10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_29fc6d154e86a5574a1ead0dd78dae7b = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_befc3e66fb1551a7c0f1a22d39381729 = $(`<div id="html_befc3e66fb1551a7c0f1a22d39381729" style="width: 100.0%; height: 100.0%;">     Protocolo = 23755566-5<br>     Endereço = Rua do Mercado, 20<br>     Ponto de referência = Em frente ao prédio Bolsa do Rio<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23755566-5.jpeg'></div>`)[0];
+                popup_29fc6d154e86a5574a1ead0dd78dae7b.setContent(html_befc3e66fb1551a7c0f1a22d39381729);
+            
+        
+
+        marker_de15d773fdd362ab2ddf9a6fbb55e838.bindPopup(popup_29fc6d154e86a5574a1ead0dd78dae7b)
+        ;
+
+        
+    
+    
+                marker_de15d773fdd362ab2ddf9a6fbb55e838.setIcon(icon_70a7bd363fc932080185c16725235f10);
+            
+    
+            var marker_f406eccf9319ec7ccf519b6f01d9e523 = L.marker(
+                [-22.8935154, -43.1936153],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_11651cfd85c3438ccdf900773458881a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6af64ad495f1995ace4cf09c9ac699e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_341a16ce1a4362a25830360f1a21b0c5 = $(`<div id="html_341a16ce1a4362a25830360f1a21b0c5" style="width: 100.0%; height: 100.0%;">     Protocolo = 23765926-0<br>     Endereço = Via Binário do Porto<br>     Ponto de referência = AQWA Corporate<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23765926-0.jpg'></div>`)[0];
+                popup_c6af64ad495f1995ace4cf09c9ac699e.setContent(html_341a16ce1a4362a25830360f1a21b0c5);
+            
+        
+
+        marker_f406eccf9319ec7ccf519b6f01d9e523.bindPopup(popup_c6af64ad495f1995ace4cf09c9ac699e)
+        ;
+
+        
+    
+    
+                marker_f406eccf9319ec7ccf519b6f01d9e523.setIcon(icon_11651cfd85c3438ccdf900773458881a);
+            
+    
+            var marker_83e2b48b74734e89bb2215018cf86015 = L.marker(
+                [-22.9014767, -43.1779019],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_00a366377e24880a4b97bbd9f033edfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c2f6f984fb9c3a1f7249a06a049a63a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_d9c50a2eadb3a18d8bc44e07441b68f8 = $(`<div id="html_d9c50a2eadb3a18d8bc44e07441b68f8" style="width: 100.0%; height: 100.0%;">     Protocolo = 23782218-2<br>     Endereço = Rua da Quitanda, 126<br>     Ponto de referência = Próximo a esquina com a Praça Pio X<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     <img src='fotos/23782218-2.jpeg'></div>`)[0];
+                popup_7c2f6f984fb9c3a1f7249a06a049a63a.setContent(html_d9c50a2eadb3a18d8bc44e07441b68f8);
+            
+        
+
+        marker_83e2b48b74734e89bb2215018cf86015.bindPopup(popup_7c2f6f984fb9c3a1f7249a06a049a63a)
+        ;
+
+        
+    
+    
+                marker_83e2b48b74734e89bb2215018cf86015.setIcon(icon_00a366377e24880a4b97bbd9f033edfe);
+            
+    
+            var marker_1006066ed4f77649535513eba4af84ec = L.marker(
+                [-22.9039442, -43.1858457],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_eab817a48c27215265d15c245a7b871d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fdd0276bb5255f77cbd92656854cfe7a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7a7250a74d7748009ee58df658ddda64 = $(`<div id="html_7a7250a74d7748009ee58df658ddda64" style="width: 100.0%; height: 100.0%;">     Protocolo = 23801887-5<br>     Endereço = Av. República do Chile, 447<br>     Ponto de referência = Esquina com a rua do lavradio<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     <img src='fotos/23801887-5.jpeg'></div>`)[0];
+                popup_fdd0276bb5255f77cbd92656854cfe7a.setContent(html_7a7250a74d7748009ee58df658ddda64);
+            
+        
+
+        marker_1006066ed4f77649535513eba4af84ec.bindPopup(popup_fdd0276bb5255f77cbd92656854cfe7a)
+        ;
+
+        
+    
+    
+                marker_1006066ed4f77649535513eba4af84ec.setIcon(icon_eab817a48c27215265d15c245a7b871d);
+            
+    
+            var marker_c56957af73e55ad9048aa2d75a011bea = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_f98e3b1dae1a48577a06239b2c14c062 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ee6883b098d1df8a365dd5a7b50b0a3 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_4798ccb714f5a78ab76c2f00366f4cff = $(`<div id="html_4798ccb714f5a78ab76c2f00366f4cff" style="width: 100.0%; height: 100.0%;">     Protocolo = 23816838-2<br>     Endereço = Praça XV, 210<br>     Ponto de referência = Em frente ao Bike Itaú<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = REDIRECIONADO PARA EMPRESA<br>     Status 2 = Fechado<br>     <img src='fotos/23816838-2.jpeg'></div>`)[0];
+                popup_6ee6883b098d1df8a365dd5a7b50b0a3.setContent(html_4798ccb714f5a78ab76c2f00366f4cff);
+            
+        
+
+        marker_c56957af73e55ad9048aa2d75a011bea.bindPopup(popup_6ee6883b098d1df8a365dd5a7b50b0a3)
+        ;
+
+        
+    
+    
+                marker_c56957af73e55ad9048aa2d75a011bea.setIcon(icon_f98e3b1dae1a48577a06239b2c14c062);
+            
+    
+            var marker_1f8f77cfb493dd43f6c9035816d0b816 = L.marker(
+                [-22.9025975, -43.176048],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_5391c73fcc86ca437e108ddbf8d17558 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db4bd9105a86566bf097715a9b50623b = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_415ad9ecb4fa0b2d92545a8ba8213742 = $(`<div id="html_415ad9ecb4fa0b2d92545a8ba8213742" style="width: 100.0%; height: 100.0%;">     Protocolo = 23840546-4<br>     Endereço = Rua Primeiro de Março, 23<br>     Ponto de referência = No sinal com a Rua do Ouvidor, ao lado da banca de jornal.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     <img src='fotos/23840546-4.jpeg'></div>`)[0];
+                popup_db4bd9105a86566bf097715a9b50623b.setContent(html_415ad9ecb4fa0b2d92545a8ba8213742);
+            
+        
+
+        marker_1f8f77cfb493dd43f6c9035816d0b816.bindPopup(popup_db4bd9105a86566bf097715a9b50623b)
+        ;
+
+        
+    
+    
+                marker_1f8f77cfb493dd43f6c9035816d0b816.setIcon(icon_5391c73fcc86ca437e108ddbf8d17558);
+            
+    
+            var marker_e6c2481ddae71cd603174d9c53bcdc03 = L.marker(
+                [-22.9063832, -43.1771761],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_90c6e5f81143f22435db530c7096165e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ab1db58065ffac3e5b30a19e8601e79 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_47821c0861a5a151102573177fc72e5b = $(`<div id="html_47821c0861a5a151102573177fc72e5b" style="width: 100.0%; height: 100.0%;">     Protocolo = 23862813-7<br>     Endereço = Av. Rio Branco <br>     Ponto de referência = Cruzamento com a sete de setembro <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/23862813-7.jpg'></div>`)[0];
+                popup_4ab1db58065ffac3e5b30a19e8601e79.setContent(html_47821c0861a5a151102573177fc72e5b);
+            
+        
+
+        marker_e6c2481ddae71cd603174d9c53bcdc03.bindPopup(popup_4ab1db58065ffac3e5b30a19e8601e79)
+        ;
+
+        
+    
+    
+                marker_e6c2481ddae71cd603174d9c53bcdc03.setIcon(icon_90c6e5f81143f22435db530c7096165e);
+            
+    
+            var marker_bd2ea63df8681b7b616044be49206ad4 = L.marker(
+                [-22.8985518, -43.1803516],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_fdc2966027c1d23590f1eecbb129666d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d6e5b8bfd416efec6e2316ad7ca98ec = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_67e35d4bda17fbc7b168ebd06d0746eb = $(`<div id="html_67e35d4bda17fbc7b168ebd06d0746eb" style="width: 100.0%; height: 100.0%;">     Protocolo = 24386127-8<br>     Endereço = Av. Rio Branco, 18<br>     Ponto de referência = Em frente ao Banco Itau<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_0d6e5b8bfd416efec6e2316ad7ca98ec.setContent(html_67e35d4bda17fbc7b168ebd06d0746eb);
+            
+        
+
+        marker_bd2ea63df8681b7b616044be49206ad4.bindPopup(popup_0d6e5b8bfd416efec6e2316ad7ca98ec)
+        ;
+
+        
+    
+    
+                marker_bd2ea63df8681b7b616044be49206ad4.setIcon(icon_fdc2966027c1d23590f1eecbb129666d);
+            
+    
+            var marker_8e73f659dfd218bb43fd6f758c78ddc5 = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_490767eee7d4387c2eea0c8027b3314c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6b10e5e0d8fbd9dfbd7c692e34593a6 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3cb92bde76e4d9218f6e19d58c685fb6 = $(`<div id="html_3cb92bde76e4d9218f6e19d58c685fb6" style="width: 100.0%; height: 100.0%;">     Protocolo = 24410235-0<br>     Endereço = Praça XV,15, Rua com Dom Manuel<br>     Ponto de referência = Fundos do Museu Naval<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     </div>`)[0];
+                popup_c6b10e5e0d8fbd9dfbd7c692e34593a6.setContent(html_3cb92bde76e4d9218f6e19d58c685fb6);
+            
+        
+
+        marker_8e73f659dfd218bb43fd6f758c78ddc5.bindPopup(popup_c6b10e5e0d8fbd9dfbd7c692e34593a6)
+        ;
+
+        
+    
+    
+                marker_8e73f659dfd218bb43fd6f758c78ddc5.setIcon(icon_490767eee7d4387c2eea0c8027b3314c);
+            
+    
+            var marker_9df2faa57200ae3ad9f2c9b34dbe579d = L.marker(
+                [-22.9002681, -43.1775221],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_379637df524bafb0a8e2900d94967132 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3e065485f056e30bc8bbd2c98ece120 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_a16ef6b0eeb7cb0dbf5ccff0bf41b471 = $(`<div id="html_a16ef6b0eeb7cb0dbf5ccff0bf41b471" style="width: 100.0%; height: 100.0%;">     Protocolo = 24454609-2<br>     Endereço = Praça Pio X, 290<br>     Ponto de referência = Em frente ao Ed. Lowdes ao lado do Banco do Brasil<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24454609-2.jpeg'></div>`)[0];
+                popup_d3e065485f056e30bc8bbd2c98ece120.setContent(html_a16ef6b0eeb7cb0dbf5ccff0bf41b471);
+            
+        
+
+        marker_9df2faa57200ae3ad9f2c9b34dbe579d.bindPopup(popup_d3e065485f056e30bc8bbd2c98ece120)
+        ;
+
+        
+    
+    
+                marker_9df2faa57200ae3ad9f2c9b34dbe579d.setIcon(icon_379637df524bafb0a8e2900d94967132);
+            
+    
+            var marker_ac46f96ee01fc36b81515cf21986a1ba = L.marker(
+                [-22.909197, -43.1800606],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_46beab60831ea8317674537857c3a6e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fa7ef2d431728675d83ce680b37cdce = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_e0f054880283c930cec4455bf6912f15 = $(`<div id="html_e0f054880283c930cec4455bf6912f15" style="width: 100.0%; height: 100.0%;">     Protocolo = 24470383-8<br>     Endereço = Av. República do Chile, 235<br>     Ponto de referência = Próxima à passarela do meio, em frente à Petrobrás<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_1fa7ef2d431728675d83ce680b37cdce.setContent(html_e0f054880283c930cec4455bf6912f15);
+            
+        
+
+        marker_ac46f96ee01fc36b81515cf21986a1ba.bindPopup(popup_1fa7ef2d431728675d83ce680b37cdce)
+        ;
+
+        
+    
+    
+                marker_ac46f96ee01fc36b81515cf21986a1ba.setIcon(icon_46beab60831ea8317674537857c3a6e8);
+            
+    
+            var marker_3dcab1859c1939e17fc74508c079f00c = L.marker(
+                [-22.8946351, -43.1861363],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_f5ee35bc25d8a7912383a4c820cac051 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a64964699f344a1a3d6f00b39431d22 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2202bf1323325010808f688215c96abc = $(`<div id="html_2202bf1323325010808f688215c96abc" style="width: 100.0%; height: 100.0%;">     Protocolo = 24495789-5<br>     Endereço = Av. Rodrigues Alves, 455<br>     Ponto de referência = Em frente à RioStar<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_3a64964699f344a1a3d6f00b39431d22.setContent(html_2202bf1323325010808f688215c96abc);
+            
+        
+
+        marker_3dcab1859c1939e17fc74508c079f00c.bindPopup(popup_3a64964699f344a1a3d6f00b39431d22)
+        ;
+
+        
+    
+    
+                marker_3dcab1859c1939e17fc74508c079f00c.setIcon(icon_f5ee35bc25d8a7912383a4c820cac051);
+            
+    
+            var marker_63820374007d4b05ce22de45a9f489ee = L.marker(
+                [-22.900255, -43.178339],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3bc7bf01adbc42065c77ff77f890faf2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_076adaa4723839901c312252ba8c36f6 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8e2b3ce41ed14a941983575e413df979 = $(`<div id="html_8e2b3ce41ed14a941983575e413df979" style="width: 100.0%; height: 100.0%;">     Protocolo = 24578889-8<br>     Endereço = Praça Pio X, 118<br>     Ponto de referência = Esquina com a Rua da Quitanda<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24578889-8.jpeg'></div>`)[0];
+                popup_076adaa4723839901c312252ba8c36f6.setContent(html_8e2b3ce41ed14a941983575e413df979);
+            
+        
+
+        marker_63820374007d4b05ce22de45a9f489ee.bindPopup(popup_076adaa4723839901c312252ba8c36f6)
+        ;
+
+        
+    
+    
+                marker_63820374007d4b05ce22de45a9f489ee.setIcon(icon_3bc7bf01adbc42065c77ff77f890faf2);
+            
+    
+            var marker_42196824c84febe78df541d6cfac47f3 = L.marker(
+                [-22.900255, -43.178339],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b8062f40b0968a6636c0af8c290023ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7dd1a7932d2ae184e066e710fcaaa22c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_e824036a8a558cfb3fd9a36a53071bbd = $(`<div id="html_e824036a8a558cfb3fd9a36a53071bbd" style="width: 100.0%; height: 100.0%;">     Protocolo = 24578915-0<br>     Endereço = Praça Pio X, 118<br>     Ponto de referência = Esquina com rua da Quitanda<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24578915-0.jpeg'></div>`)[0];
+                popup_7dd1a7932d2ae184e066e710fcaaa22c.setContent(html_e824036a8a558cfb3fd9a36a53071bbd);
+            
+        
+
+        marker_42196824c84febe78df541d6cfac47f3.bindPopup(popup_7dd1a7932d2ae184e066e710fcaaa22c)
+        ;
+
+        
+    
+    
+                marker_42196824c84febe78df541d6cfac47f3.setIcon(icon_b8062f40b0968a6636c0af8c290023ac);
+            
+    
+            var marker_7fdcb6562124a4800f48a6583788cdfe = L.marker(
+                [-22.9000771, -43.1774307],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_7284e7663dcc1e12c1ba957671a44b09 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c07875206ee96e56f054cf02c2bfa30 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_6b152c1a788ba8d80466a75bf50b7994 = $(`<div id="html_6b152c1a788ba8d80466a75bf50b7994" style="width: 100.0%; height: 100.0%;">     Protocolo = 24578937-2<br>     Endereço = Rua da Candelária, 60<br>     Ponto de referência = Em frente ao banco Santander<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     <img src='fotos/24578937-2.jpeg'></div>`)[0];
+                popup_1c07875206ee96e56f054cf02c2bfa30.setContent(html_6b152c1a788ba8d80466a75bf50b7994);
+            
+        
+
+        marker_7fdcb6562124a4800f48a6583788cdfe.bindPopup(popup_1c07875206ee96e56f054cf02c2bfa30)
+        ;
+
+        
+    
+    
+                marker_7fdcb6562124a4800f48a6583788cdfe.setIcon(icon_7284e7663dcc1e12c1ba957671a44b09);
+            
+    
+            var marker_750d8d4fd2c861b68bbe9114d48c97fc = L.marker(
+                [-22.910177, -43.1756377],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_83b412132a99aead1710438da10e2de3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce1c246d61ca0864c82b4e4502c9eb5c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_39668b61a243a99cca92826c68ccf22e = $(`<div id="html_39668b61a243a99cca92826c68ccf22e" style="width: 100.0%; height: 100.0%;">     Protocolo = 24619049-0<br>     Endereço = Av. Rio Branco, 219<br>     Ponto de referência = Na lateral da Biblioteca Nacional, esquina com a Rua Pedro Lessa.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_ce1c246d61ca0864c82b4e4502c9eb5c.setContent(html_39668b61a243a99cca92826c68ccf22e);
+            
+        
+
+        marker_750d8d4fd2c861b68bbe9114d48c97fc.bindPopup(popup_ce1c246d61ca0864c82b4e4502c9eb5c)
+        ;
+
+        
+    
+    
+                marker_750d8d4fd2c861b68bbe9114d48c97fc.setIcon(icon_83b412132a99aead1710438da10e2de3);
+            
+    
+            var marker_e5065e53bc141ab957da9a9c7ac337f1 = L.marker(
+                [-22.9040983, -43.1864537],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_d6fe006fe7ff307dde6fe826c3313881 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3d96fc6790c6b5dd275074d07bce21a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_a2eb114334333a47bb6035a2d1f74c3d = $(`<div id="html_a2eb114334333a47bb6035a2d1f74c3d" style="width: 100.0%; height: 100.0%;">     Protocolo = 24679602-0<br>     Endereço = Av. Presidente Vargas, 1121 - Loja A<br>     Ponto de referência = Próximo à saída B da estação de metrô Presidente Vargas, na altura da R. Regente Feijó.<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_d3d96fc6790c6b5dd275074d07bce21a.setContent(html_a2eb114334333a47bb6035a2d1f74c3d);
+            
+        
+
+        marker_e5065e53bc141ab957da9a9c7ac337f1.bindPopup(popup_d3d96fc6790c6b5dd275074d07bce21a)
+        ;
+
+        
+    
+    
+                marker_e5065e53bc141ab957da9a9c7ac337f1.setIcon(icon_d6fe006fe7ff307dde6fe826c3313881);
+            
+    
+            var marker_81dfb0e23f482f16d5755533096b60cc = L.marker(
+                [-22.9045923, -43.1744911],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_da70bb54a8833deddefe379e67eeb5e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9aa1639be73168f5e6e3722faabbe99 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7bca6a8a30f8fc174e7bcdaa1543d951 = $(`<div id="html_7bca6a8a30f8fc174e7bcdaa1543d951" style="width: 100.0%; height: 100.0%;">     Protocolo = 24702369-4<br>     Endereço = Rua São José, esquina com Alfred Agache, s/n<br>     Ponto de referência = Na lateral do prédio da Alerj <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24702369-4.jpeg'></div>`)[0];
+                popup_c9aa1639be73168f5e6e3722faabbe99.setContent(html_7bca6a8a30f8fc174e7bcdaa1543d951);
+            
+        
+
+        marker_81dfb0e23f482f16d5755533096b60cc.bindPopup(popup_c9aa1639be73168f5e6e3722faabbe99)
+        ;
+
+        
+    
+    
+                marker_81dfb0e23f482f16d5755533096b60cc.setIcon(icon_da70bb54a8833deddefe379e67eeb5e4);
+            
+    
+            var marker_e812a7d408976de7d36c63cffcfcc456 = L.marker(
+                [-22.8962042, -43.1815483],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3b454747c3cd9a7743e1cbdc7106492c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e62853feb6e1a6fea5ff45ef8e387beb = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_06b55b3e282c46f770e80473af6db53b = $(`<div id="html_06b55b3e282c46f770e80473af6db53b" style="width: 100.0%; height: 100.0%;">     Protocolo = 24771564-8<br>     Endereço = Praça Mauá, 125<br>     Ponto de referência = Em frente ao Museu de Arte do Rio, na calçada da frente.<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e62853feb6e1a6fea5ff45ef8e387beb.setContent(html_06b55b3e282c46f770e80473af6db53b);
+            
+        
+
+        marker_e812a7d408976de7d36c63cffcfcc456.bindPopup(popup_e62853feb6e1a6fea5ff45ef8e387beb)
+        ;
+
+        
+    
+    
+                marker_e812a7d408976de7d36c63cffcfcc456.setIcon(icon_3b454747c3cd9a7743e1cbdc7106492c);
+            
+    
+            var marker_d420d7339a0f70a141771a194703eb79 = L.marker(
+                [-22.9004364, -43.17803],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_15abd11b71fa54c0ececa3251a442010 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e2ea42d3db4e152623534fe625e8bf0 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ebaa4ddd384bf7abc7a3a73509561042 = $(`<div id="html_ebaa4ddd384bf7abc7a3a73509561042" style="width: 100.0%; height: 100.0%;">     Protocolo = 24769233-5<br>     Endereço = Praça Pio x, s/n<br>     Ponto de referência = Do outro lado da rua está localizada Caixa Econômica, 309<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24769233-5.jpeg'></div>`)[0];
+                popup_2e2ea42d3db4e152623534fe625e8bf0.setContent(html_ebaa4ddd384bf7abc7a3a73509561042);
+            
+        
+
+        marker_d420d7339a0f70a141771a194703eb79.bindPopup(popup_2e2ea42d3db4e152623534fe625e8bf0)
+        ;
+
+        
+    
+    
+                marker_d420d7339a0f70a141771a194703eb79.setIcon(icon_15abd11b71fa54c0ececa3251a442010);
+            
+    
+            var marker_433fc85c324e37dfb8b231245400b052 = L.marker(
+                [-22.8973551, -43.1802782],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_87f0fb90be1e965534bf1699ed47f905 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a3c1569ea996907aa18c520b58c5261 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8a910fee1e5f387c5eebdf5726bb92c0 = $(`<div id="html_8a910fee1e5f387c5eebdf5726bb92c0" style="width: 100.0%; height: 100.0%;">     Protocolo = 24809850-0<br>     Endereço = Av. Rio Branco, 1<br>     Ponto de referência = Calçada do Edifício RB1, próximo à cafeteria <br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_9a3c1569ea996907aa18c520b58c5261.setContent(html_8a910fee1e5f387c5eebdf5726bb92c0);
+            
+        
+
+        marker_433fc85c324e37dfb8b231245400b052.bindPopup(popup_9a3c1569ea996907aa18c520b58c5261)
+        ;
+
+        
+    
+    
+                marker_433fc85c324e37dfb8b231245400b052.setIcon(icon_87f0fb90be1e965534bf1699ed47f905);
+            
+    
+            var marker_f7f6318bc86eb204ac52d08c10043fb5 = L.marker(
+                [-22.8970768, -43.1832955],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_566653862beb4e53a4237fea2e992501 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8687d0f5d01176e09f33d86a63ec9c2f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_0ce783ded37b37bade435eb602ae0230 = $(`<div id="html_0ce783ded37b37bade435eb602ae0230" style="width: 100.0%; height: 100.0%;">     Protocolo = 24812566-0<br>     Endereço = Avenida Venezuela, 31<br>     Ponto de referência = Do lado da escola Municipal Vicente Licínio Cardoso<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = NOVO CHAMADO<br>     Status 2 = Fechado<br>     <img src='fotos/24812566-0.jpeg'></div>`)[0];
+                popup_8687d0f5d01176e09f33d86a63ec9c2f.setContent(html_0ce783ded37b37bade435eb602ae0230);
+            
+        
+
+        marker_f7f6318bc86eb204ac52d08c10043fb5.bindPopup(popup_8687d0f5d01176e09f33d86a63ec9c2f)
+        ;
+
+        
+    
+    
+                marker_f7f6318bc86eb204ac52d08c10043fb5.setIcon(icon_566653862beb4e53a4237fea2e992501);
+            
+    
+            var marker_aa239c76194df5bd411ef06db96a04e1 = L.marker(
+                [-22.9062877, -43.1789356],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_ab4594e2da30707bd74c4dd64798f737 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_502689a4c9f473aad34452fc778b6b5e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_5345d6660a6a3fee824b8d175cce1be6 = $(`<div id="html_5345d6660a6a3fee824b8d175cce1be6" style="width: 100.0%; height: 100.0%;">     Protocolo = 24843897-6<br>     Endereço = Rua da Carioca, 2<br>     Ponto de referência = Na direção da lanchonete Super Sucos, próximo à saída A da estação de metrô Carioca.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_502689a4c9f473aad34452fc778b6b5e.setContent(html_5345d6660a6a3fee824b8d175cce1be6);
+            
+        
+
+        marker_aa239c76194df5bd411ef06db96a04e1.bindPopup(popup_502689a4c9f473aad34452fc778b6b5e)
+        ;
+
+        
+    
+    
+                marker_aa239c76194df5bd411ef06db96a04e1.setIcon(icon_ab4594e2da30707bd74c4dd64798f737);
+            
+    
+            var marker_7be3e346dde01fd24b0ed67346351824 = L.marker(
+                [-22.9029883, -43.1773039],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_60f9b5f6cdb62d61a315e5732cc88d7d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef2cda882a4638e4e22a697e57bea5cd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_d873ddcde7cbfa9b014e995be8b95dc4 = $(`<div id="html_d873ddcde7cbfa9b014e995be8b95dc4" style="width: 100.0%; height: 100.0%;">     Protocolo = 24833731-2<br>     Endereço = Rua da Quitanda, 81<br>     Ponto de referência = Na calçada da Drogaria Wilson <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24833731-2.jpeg'></div>`)[0];
+                popup_ef2cda882a4638e4e22a697e57bea5cd.setContent(html_d873ddcde7cbfa9b014e995be8b95dc4);
+            
+        
+
+        marker_7be3e346dde01fd24b0ed67346351824.bindPopup(popup_ef2cda882a4638e4e22a697e57bea5cd)
+        ;
+
+        
+    
+    
+                marker_7be3e346dde01fd24b0ed67346351824.setIcon(icon_60f9b5f6cdb62d61a315e5732cc88d7d);
+            
+    
+            var marker_7bb6a484260945bc04464475fdeed6f6 = L.marker(
+                [-22.8999667, -43.1792982],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_2af27e2afc31dc7709f37568be61738a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f0b2b1a9950e1b83f2be5d5666120f2 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2591b209dc294fd5b609ae45f0c921eb = $(`<div id="html_2591b209dc294fd5b609ae45f0c921eb" style="width: 100.0%; height: 100.0%;">     Protocolo = 24841682-6<br>     Endereço = Avenida Rio Branco, 53<br>     Ponto de referência =  Em frente à loja espaço laser depilação<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24841682-6.jpeg'></div>`)[0];
+                popup_5f0b2b1a9950e1b83f2be5d5666120f2.setContent(html_2591b209dc294fd5b609ae45f0c921eb);
+            
+        
+
+        marker_7bb6a484260945bc04464475fdeed6f6.bindPopup(popup_5f0b2b1a9950e1b83f2be5d5666120f2)
+        ;
+
+        
+    
+    
+                marker_7bb6a484260945bc04464475fdeed6f6.setIcon(icon_2af27e2afc31dc7709f37568be61738a);
+            
+    
+            var marker_e075d0a03804424407e7b6f7dc116b05 = L.marker(
+                [-22.9092396, -43.1708943],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3fde78c705ddfd7d6f1c3cee4396cf5f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18d5ce702208f2dc801be35b3793bc4f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_72d3ce4e098b1f15bd04b2ab8522c796 = $(`<div id="html_72d3ce4e098b1f15bd04b2ab8522c796" style="width: 100.0%; height: 100.0%;">     Protocolo = 24877924-5<br>     Endereço = Av. Franklin Roosevelt, 115<br>     Ponto de referência = Na altura do Ed. Itanagra e próximo ao ponto de ônibus.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_18d5ce702208f2dc801be35b3793bc4f.setContent(html_72d3ce4e098b1f15bd04b2ab8522c796);
+            
+        
+
+        marker_e075d0a03804424407e7b6f7dc116b05.bindPopup(popup_18d5ce702208f2dc801be35b3793bc4f)
+        ;
+
+        
+    
+    
+                marker_e075d0a03804424407e7b6f7dc116b05.setIcon(icon_3fde78c705ddfd7d6f1c3cee4396cf5f);
+            
+    
+            var marker_47be6363170646189bd495a831a38773 = L.marker(
+                [-22.9114648, -43.1731689],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_508b8982fc78e878fa06396d6476c058 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cca93428dc7d8a7d86eec5a48fa53d1d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c2bee7a510870d4f925f5fd91315d3a4 = $(`<div id="html_c2bee7a510870d4f925f5fd91315d3a4" style="width: 100.0%; height: 100.0%;">     Protocolo = 24877857-2<br>     Endereço = Av. Presidente Wilson, 164<br>     Ponto de referência = Próximo à cabine do Consulado dos Estados Unidos.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_cca93428dc7d8a7d86eec5a48fa53d1d.setContent(html_c2bee7a510870d4f925f5fd91315d3a4);
+            
+        
+
+        marker_47be6363170646189bd495a831a38773.bindPopup(popup_cca93428dc7d8a7d86eec5a48fa53d1d)
+        ;
+
+        
+    
+    
+                marker_47be6363170646189bd495a831a38773.setIcon(icon_508b8982fc78e878fa06396d6476c058);
+            
+    
+            var marker_6a66471debd9f03923c9885adc1ce68d = L.marker(
+                [-22.910062, -43.182459],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_928e71f0c28a2dd6a29c91ab75292fa8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5d6561e4c2c6e2b6ff76e7d1b65f4c0 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_dc7f7556e5272f8ebf1b7f460f96d535 = $(`<div id="html_dc7f7556e5272f8ebf1b7f460f96d535" style="width: 100.0%; height: 100.0%;">     Protocolo = 24878140-2<br>     Endereço = Av. República do Chile, 447<br>     Ponto de referência = Esquina com a Rua do Lavradio, próximo a sinal.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_f5d6561e4c2c6e2b6ff76e7d1b65f4c0.setContent(html_dc7f7556e5272f8ebf1b7f460f96d535);
+            
+        
+
+        marker_6a66471debd9f03923c9885adc1ce68d.bindPopup(popup_f5d6561e4c2c6e2b6ff76e7d1b65f4c0)
+        ;
+
+        
+    
+    
+                marker_6a66471debd9f03923c9885adc1ce68d.setIcon(icon_928e71f0c28a2dd6a29c91ab75292fa8);
+            
+    
+            var marker_db1112a969ce3a908bfad55648995ef6 = L.marker(
+                [-22.9107068, -43.1803917],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_c4fa627168dcc127da32f92791d0fb15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d06f8d99ac4a4c00e1aefa977ef4aff2 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_eb42e850b27f0cf810cba361ad66bc96 = $(`<div id="html_eb42e850b27f0cf810cba361ad66bc96" style="width: 100.0%; height: 100.0%;">     Protocolo = 24878396-6<br>     Endereço = Av. República do Chile, 245<br>     Ponto de referência = Próximo à Catedral Metropolitana.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     </div>`)[0];
+                popup_d06f8d99ac4a4c00e1aefa977ef4aff2.setContent(html_eb42e850b27f0cf810cba361ad66bc96);
+            
+        
+
+        marker_db1112a969ce3a908bfad55648995ef6.bindPopup(popup_d06f8d99ac4a4c00e1aefa977ef4aff2)
+        ;
+
+        
+    
+    
+                marker_db1112a969ce3a908bfad55648995ef6.setIcon(icon_c4fa627168dcc127da32f92791d0fb15);
+            
+    
+            var marker_55d332c704149b1523cb00f8fe202248 = L.marker(
+                [-22.9089553, -43.1789823],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b076024cfcf1a57935db6f8b4ac0a261 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70a7c1ef5db9d930917f3da82464b85a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2ca90dee46f7703ee38bc54070fc1de4 = $(`<div id="html_2ca90dee46f7703ee38bc54070fc1de4" style="width: 100.0%; height: 100.0%;">     Protocolo = 25080758-5<br>     Endereço = Av. República do Chile, 57<br>     Ponto de referência = Próximo à cabine da PM, quase esquina com a Rua Lélio Gama.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     </div>`)[0];
+                popup_70a7c1ef5db9d930917f3da82464b85a.setContent(html_2ca90dee46f7703ee38bc54070fc1de4);
+            
+        
+
+        marker_55d332c704149b1523cb00f8fe202248.bindPopup(popup_70a7c1ef5db9d930917f3da82464b85a)
+        ;
+
+        
+    
+    
+                marker_55d332c704149b1523cb00f8fe202248.setIcon(icon_b076024cfcf1a57935db6f8b4ac0a261);
+            
+    
+            var marker_4652dc3afc4e86a763c29cb1aa8fec45 = L.marker(
+                [-22.9086884, -43.1784367],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_d1c146ed05c6a59e0600c7261b34294f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38797fbbbe949a374d1b13ca8a07e693 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_85a576f47f8a4ff5e7611778b140ff64 = $(`<div id="html_85a576f47f8a4ff5e7611778b140ff64" style="width: 100.0%; height: 100.0%;">     Protocolo = 24911029-0<br>     Endereço = Av. República do Chile, 201<br>     Ponto de referência = Sinal da esquina da R. Senador Dantas com a Av. Rep. do Chile - em frente à Ragazzo.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_38797fbbbe949a374d1b13ca8a07e693.setContent(html_85a576f47f8a4ff5e7611778b140ff64);
+            
+        
+
+        marker_4652dc3afc4e86a763c29cb1aa8fec45.bindPopup(popup_38797fbbbe949a374d1b13ca8a07e693)
+        ;
+
+        
+    
+    
+                marker_4652dc3afc4e86a763c29cb1aa8fec45.setIcon(icon_d1c146ed05c6a59e0600c7261b34294f);
+            
+    
+            var marker_d6741ec06b5fa67899bd52394b700d2f = L.marker(
+                [-22.9031196, -43.1772228],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_22f87157483f9a11ce77ea24474f8c47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c743e375a8c74f38015a78fca26ce59c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_533c2a023ebc5575835eb5fcec85c13a = $(`<div id="html_533c2a023ebc5575835eb5fcec85c13a" style="width: 100.0%; height: 100.0%;">     Protocolo = 24908274-5<br>     Endereço = Rua do Ouvidor, esquina com Primeiro de Março<br>     Ponto de referência = Ao lado da banca de jornal<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24908274-5.jpeg'></div>`)[0];
+                popup_c743e375a8c74f38015a78fca26ce59c.setContent(html_533c2a023ebc5575835eb5fcec85c13a);
+            
+        
+
+        marker_d6741ec06b5fa67899bd52394b700d2f.bindPopup(popup_c743e375a8c74f38015a78fca26ce59c)
+        ;
+
+        
+    
+    
+                marker_d6741ec06b5fa67899bd52394b700d2f.setIcon(icon_22f87157483f9a11ce77ea24474f8c47);
+            
+    
+            var marker_68609609370cce36e393d4c696dbfb90 = L.marker(
+                [-22.9061452, -43.1776702],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_9eeb8016e8769f6c3970bfb45aa1579f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9371f6a2282d7c62eff7634679650577 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_5e5a05d074ebb68f210153df0d08970e = $(`<div id="html_5e5a05d074ebb68f210153df0d08970e" style="width: 100.0%; height: 100.0%;">     Protocolo = 24911559-2<br>     Endereço = Av. Nilo Peçanha, 50<br>     Ponto de referência = O bloco de concreto está na calçada do Largo da Carioca, na direção do Banco Santander da outra calçada.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_9371f6a2282d7c62eff7634679650577.setContent(html_5e5a05d074ebb68f210153df0d08970e);
+            
+        
+
+        marker_68609609370cce36e393d4c696dbfb90.bindPopup(popup_9371f6a2282d7c62eff7634679650577)
+        ;
+
+        
+    
+    
+                marker_68609609370cce36e393d4c696dbfb90.setIcon(icon_9eeb8016e8769f6c3970bfb45aa1579f);
+            
+    
+            var marker_4d709ed1f261e2a843b2b22f8209b1e8 = L.marker(
+                [-22.9024263, -43.1755977],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_4c489d96e4177acdbc5e277f5a19d2e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5597b1146b387749e1fd4cd7f80cd80d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_361125bb3fa3390be2c0c8f1676b8731 = $(`<div id="html_361125bb3fa3390be2c0c8f1676b8731" style="width: 100.0%; height: 100.0%;">     Protocolo = 24938622-6<br>     Endereço = Rua Primeiro de Março, 24<br>     Ponto de referência = Em frente a banca de jornal,  esquina com a Rua do Ouvidor<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/24938622-6.jpeg'></div>`)[0];
+                popup_5597b1146b387749e1fd4cd7f80cd80d.setContent(html_361125bb3fa3390be2c0c8f1676b8731);
+            
+        
+
+        marker_4d709ed1f261e2a843b2b22f8209b1e8.bindPopup(popup_5597b1146b387749e1fd4cd7f80cd80d)
+        ;
+
+        
+    
+    
+                marker_4d709ed1f261e2a843b2b22f8209b1e8.setIcon(icon_4c489d96e4177acdbc5e277f5a19d2e4);
+            
+    
+            var marker_6828bbf21a8095c9a3e45705b5b8aac0 = L.marker(
+                [-22.9017538, -43.1774027],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b2ed3112f5de7a64a0291920b26dafa9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0aedbc49460223f426f43f6c88c88f25 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_575ff61d97e5a685ed7aed30a7c81773 = $(`<div id="html_575ff61d97e5a685ed7aed30a7c81773" style="width: 100.0%; height: 100.0%;">     Protocolo = 25037006-8<br>     Endereço = Rua da Alfândega, 25<br>     Ponto de referência = Em frente ao Edifício Danilo Soares da Silva<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25037006-8.jpeg'></div>`)[0];
+                popup_0aedbc49460223f426f43f6c88c88f25.setContent(html_575ff61d97e5a685ed7aed30a7c81773);
+            
+        
+
+        marker_6828bbf21a8095c9a3e45705b5b8aac0.bindPopup(popup_0aedbc49460223f426f43f6c88c88f25)
+        ;
+
+        
+    
+    
+                marker_6828bbf21a8095c9a3e45705b5b8aac0.setIcon(icon_b2ed3112f5de7a64a0291920b26dafa9);
+            
+    
+            var marker_59dfd3ca3603f250bcbcd6aad68a385f = L.marker(
+                [-22.9137182, -43.1676406],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_43606d5f106c5cb02c6af9b54cd8316c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05854f1dd9ac16b539e55464082c01e3 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_ac44369026a9a1c65fd7108735671b3c = $(`<div id="html_ac44369026a9a1c65fd7108735671b3c" style="width: 100.0%; height: 100.0%;">     Protocolo = 25034528-4<br>     Endereço = Praça Senador Salgado Filho, 1<br>     Ponto de referência = Na frente da entrada do Aeroporto Santos Dumont. <br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25034528-4.jpeg'></div>`)[0];
+                popup_05854f1dd9ac16b539e55464082c01e3.setContent(html_ac44369026a9a1c65fd7108735671b3c);
+            
+        
+
+        marker_59dfd3ca3603f250bcbcd6aad68a385f.bindPopup(popup_05854f1dd9ac16b539e55464082c01e3)
+        ;
+
+        
+    
+    
+                marker_59dfd3ca3603f250bcbcd6aad68a385f.setIcon(icon_43606d5f106c5cb02c6af9b54cd8316c);
+            
+    
+            var marker_c0b04cc1ca9b2b80d6908ae97fa1c8cb = L.marker(
+                [-22.8962658, -43.1813046],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_1a470de96abc5bf2a18f4159048b01ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ce46ac168a09ef69fe92def40a8dd85 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_281f732a53b8d62d2e9159b0b6dabf2d = $(`<div id="html_281f732a53b8d62d2e9159b0b6dabf2d" style="width: 100.0%; height: 100.0%;">     Protocolo = 25143814-6<br>     Endereço = Praça Mauá, s/n<br>     Ponto de referência =  esquina com Avenida Rodrugues Alves<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25143814-6.jpeg'></div>`)[0];
+                popup_5ce46ac168a09ef69fe92def40a8dd85.setContent(html_281f732a53b8d62d2e9159b0b6dabf2d);
+            
+        
+
+        marker_c0b04cc1ca9b2b80d6908ae97fa1c8cb.bindPopup(popup_5ce46ac168a09ef69fe92def40a8dd85)
+        ;
+
+        
+    
+    
+                marker_c0b04cc1ca9b2b80d6908ae97fa1c8cb.setIcon(icon_1a470de96abc5bf2a18f4159048b01ab);
+            
+    
+            var marker_a50831408e7a305e6de0698b2d46aa68 = L.marker(
+                [-22.9110229, -43.173314],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_be1999f8794dead6dd0ce0ae1b1e1cfd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa787f90b0481959da7c5c18f666dc19 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_7a731ba239b2d8ec1b9949efeb8e9806 = $(`<div id="html_7a731ba239b2d8ec1b9949efeb8e9806" style="width: 100.0%; height: 100.0%;">     Protocolo = 25228553-5<br>     Endereço = Avenida Calógeras, 12 <br>     Ponto de referência = Na frente do edifício Embaixador Raul Fernandes na esquina com Avenida Presidente Wilson<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25228553-5.jpg'></div>`)[0];
+                popup_fa787f90b0481959da7c5c18f666dc19.setContent(html_7a731ba239b2d8ec1b9949efeb8e9806);
+            
+        
+
+        marker_a50831408e7a305e6de0698b2d46aa68.bindPopup(popup_fa787f90b0481959da7c5c18f666dc19)
+        ;
+
+        
+    
+    
+                marker_a50831408e7a305e6de0698b2d46aa68.setIcon(icon_be1999f8794dead6dd0ce0ae1b1e1cfd);
+            
+    
+            var marker_47e9aa1c5dce44620fc0f610be226247 = L.marker(
+                [-22.8944053, -43.1982465],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_0095ac6e02ce6e6f738f5be0146b5b30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_323ad968cef6131dbebd42b620333d64 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2bcaf1628d29002073396ef5b21567a9 = $(`<div id="html_2bcaf1628d29002073396ef5b21567a9" style="width: 100.0%; height: 100.0%;">     Protocolo = 25372225-6<br>     Endereço = Via Binário do Porto, 299<br>     Ponto de referência = Em frente ao AQWA Corporate <br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25372225-6.jpeg'></div>`)[0];
+                popup_323ad968cef6131dbebd42b620333d64.setContent(html_2bcaf1628d29002073396ef5b21567a9);
+            
+        
+
+        marker_47e9aa1c5dce44620fc0f610be226247.bindPopup(popup_323ad968cef6131dbebd42b620333d64)
+        ;
+
+        
+    
+    
+                marker_47e9aa1c5dce44620fc0f610be226247.setIcon(icon_0095ac6e02ce6e6f738f5be0146b5b30);
+            
+    
+            var marker_a3cdd5b344581e33114ce94852ba6990 = L.marker(
+                [-22.8943665, -43.1909916],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_34fcf46ec52b45526950d0696df3c1ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f746270f2ab7389406832d55ee1864fd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_b93bc833ecf9285cd2836cee96aefe04 = $(`<div id="html_b93bc833ecf9285cd2836cee96aefe04" style="width: 100.0%; height: 100.0%;">     Protocolo = 25461371-4<br>     Endereço = Avenida Venezuela, 275<br>     Ponto de referência = Perto do sinal, próximo a Rua Silvino Montenegro, na via sentido centro<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25461371-4.jpeg'></div>`)[0];
+                popup_f746270f2ab7389406832d55ee1864fd.setContent(html_b93bc833ecf9285cd2836cee96aefe04);
+            
+        
+
+        marker_a3cdd5b344581e33114ce94852ba6990.bindPopup(popup_f746270f2ab7389406832d55ee1864fd)
+        ;
+
+        
+    
+    
+                marker_a3cdd5b344581e33114ce94852ba6990.setIcon(icon_34fcf46ec52b45526950d0696df3c1ed);
+            
+    
+            var marker_79ba8f6afcd83c17c08a6258575ceca2 = L.marker(
+                [-22.9020944, -43.1783581],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_063bd7b311375bd7775344e8c2671588 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5aacd21144bd56d254bedca0fa9c30f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_d9906fc78e1b60a33b504695a55ed9ed = $(`<div id="html_d9906fc78e1b60a33b504695a55ed9ed" style="width: 100.0%; height: 100.0%;">     Protocolo = 25821107-8<br>     Endereço = Rua da Alfândega, 53<br>     Ponto de referência = Na lateral do Banco Mercantil do Brasil e da banca de jornal <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/25821107-8.jpeg'></div>`)[0];
+                popup_e5aacd21144bd56d254bedca0fa9c30f.setContent(html_d9906fc78e1b60a33b504695a55ed9ed);
+            
+        
+
+        marker_79ba8f6afcd83c17c08a6258575ceca2.bindPopup(popup_e5aacd21144bd56d254bedca0fa9c30f)
+        ;
+
+        
+    
+    
+                marker_79ba8f6afcd83c17c08a6258575ceca2.setIcon(icon_063bd7b311375bd7775344e8c2671588);
+            
+    
+            var marker_ca0c51fb7338e7fe7438fd61f9486d28 = L.marker(
+                [-22.9054633, -43.1773238],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b4307e04b0e84b4013977cefd123f0ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f33658bdb997b403cda0b96219251b88 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_336d5f1175d85b8a41ffb7f4b1fc4a97 = $(`<div id="html_336d5f1175d85b8a41ffb7f4b1fc4a97" style="width: 100.0%; height: 100.0%;">     Protocolo = 26017214-2<br>     Endereço = Avenida Rio Branco, 151C<br>     Ponto de referência = Em frente a loja Taco<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/26017214-2.jpeg'></div>`)[0];
+                popup_f33658bdb997b403cda0b96219251b88.setContent(html_336d5f1175d85b8a41ffb7f4b1fc4a97);
+            
+        
+
+        marker_ca0c51fb7338e7fe7438fd61f9486d28.bindPopup(popup_f33658bdb997b403cda0b96219251b88)
+        ;
+
+        
+    
+    
+                marker_ca0c51fb7338e7fe7438fd61f9486d28.setIcon(icon_b4307e04b0e84b4013977cefd123f0ac);
+            
+    
+            var marker_f9687db3c46f0c123b6d66d19f04ba9c = L.marker(
+                [-22.9004818, -43.1790893],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_82de7977d546d38127d5d4e1079f9d46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_587df35f05f2acd96b26ac85add34f6f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_05977debee55ae59c20bf4642f4ef68a = $(`<div id="html_05977debee55ae59c20bf4642f4ef68a" style="width: 100.0%; height: 100.0%;">     Protocolo = 26017283-0<br>     Endereço = Avenida Rio Branco, 57<br>     Ponto de referência = Esquina com Teófilo Otoni. <br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/26017283-0.jpeg'></div>`)[0];
+                popup_587df35f05f2acd96b26ac85add34f6f.setContent(html_05977debee55ae59c20bf4642f4ef68a);
+            
+        
+
+        marker_f9687db3c46f0c123b6d66d19f04ba9c.bindPopup(popup_587df35f05f2acd96b26ac85add34f6f)
+        ;
+
+        
+    
+    
+                marker_f9687db3c46f0c123b6d66d19f04ba9c.setIcon(icon_82de7977d546d38127d5d4e1079f9d46);
+            
+    
+            var marker_7f6227bfba34cb439efa7b0946dca369 = L.marker(
+                [-22.9018555, -43.1791042],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_dcf5248f76e94254e6ab2b7ddb0be67e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_52b970f4ebc75653ad8b4e10a889684e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_9205b7e30095feab0902e7257a1b3e4d = $(`<div id="html_9205b7e30095feab0902e7257a1b3e4d" style="width: 100.0%; height: 100.0%;">     Protocolo = 26121912-4<br>     Endereço = Avenida Rio Branco, 70<br>     Ponto de referência = Esquina com Avenida Presidente Vargas, na frente do Santander <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/26121912-4.jpg'></div>`)[0];
+                popup_52b970f4ebc75653ad8b4e10a889684e.setContent(html_9205b7e30095feab0902e7257a1b3e4d);
+            
+        
+
+        marker_7f6227bfba34cb439efa7b0946dca369.bindPopup(popup_52b970f4ebc75653ad8b4e10a889684e)
+        ;
+
+        
+    
+    
+                marker_7f6227bfba34cb439efa7b0946dca369.setIcon(icon_dcf5248f76e94254e6ab2b7ddb0be67e);
+            
+    
+            var marker_9b37199622ca4ae035183c65ad892936 = L.marker(
+                [-22.9025031, -43.1779439],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_1cdb58bc91a4a8a1b37ea0c1b3db3a55 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cfc5cd4288cb0c64d7f5f4d91dd57f95 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_1138249d1c0baef345c8bf99bc7528d0 = $(`<div id="html_1138249d1c0baef345c8bf99bc7528d0" style="width: 100.0%; height: 100.0%;">     Protocolo = 26227362-6<br>     Endereço = Rua Buenos Aires, 51<br>     Ponto de referência = Do outro lado da rua está localizada agência do santander<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     <img src='fotos/26227362-6.jpeg'></div>`)[0];
+                popup_cfc5cd4288cb0c64d7f5f4d91dd57f95.setContent(html_1138249d1c0baef345c8bf99bc7528d0);
+            
+        
+
+        marker_9b37199622ca4ae035183c65ad892936.bindPopup(popup_cfc5cd4288cb0c64d7f5f4d91dd57f95)
+        ;
+
+        
+    
+    
+                marker_9b37199622ca4ae035183c65ad892936.setIcon(icon_1cdb58bc91a4a8a1b37ea0c1b3db3a55);
+            
+    
+            var marker_b78e21b05e1a9a07b899666954d0177f = L.marker(
+                [-22.8949128, -43.213743],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_a604bda2ecf901d90bdc86910b7c2220 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ede2219fb91fc71920006eb060631de = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_215762109a2d5dcd11e18a42e0dfd21d = $(`<div id="html_215762109a2d5dcd11e18a42e0dfd21d" style="width: 100.0%; height: 100.0%;">     Protocolo = 26280360-7<br>     Endereço = Avenida Rio de Janeiro, 555<br>     Ponto de referência = Em frente ao Bradesco Seguros<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = RECORRIDO<br>     Status 2 = Fechado<br>     </div>`)[0];
+                popup_3ede2219fb91fc71920006eb060631de.setContent(html_215762109a2d5dcd11e18a42e0dfd21d);
+            
+        
+
+        marker_b78e21b05e1a9a07b899666954d0177f.bindPopup(popup_3ede2219fb91fc71920006eb060631de)
+        ;
+
+        
+    
+    
+                marker_b78e21b05e1a9a07b899666954d0177f.setIcon(icon_a604bda2ecf901d90bdc86910b7c2220);
+            
+    
+            var marker_514d346bc5a77bfb5e8acad883f2d3e3 = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_fc937859a1f5ac176d211a249c7a1b07 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9db0f15ec9562d51c85d2f75e59e28c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f189252c0fdcec4a9cdef1de7b0082af = $(`<div id="html_f189252c0fdcec4a9cdef1de7b0082af" style="width: 100.0%; height: 100.0%;">     Protocolo = 26415410-7<br>     Endereço = Praça XV, 96<br>     Ponto de referência = Estacionamento bicicletário do VLT, estação Praça XV.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = -<br>     Status 2 = -<br>     </div>`)[0];
+                popup_c9db0f15ec9562d51c85d2f75e59e28c.setContent(html_f189252c0fdcec4a9cdef1de7b0082af);
+            
+        
+
+        marker_514d346bc5a77bfb5e8acad883f2d3e3.bindPopup(popup_c9db0f15ec9562d51c85d2f75e59e28c)
+        ;
+
+        
+    
+    
+                marker_514d346bc5a77bfb5e8acad883f2d3e3.setIcon(icon_fc937859a1f5ac176d211a249c7a1b07);
+            
+    
+            var marker_a960c4516ba5089cc8432054a58fceaf = L.marker(
+                [-22.9028972, -43.173307],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_f9aed54b38b5fa608db483dbe925805a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3695af650bc167283f3edcebd21e662a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_e53c6ef9c7363137d3700362742f070b = $(`<div id="html_e53c6ef9c7363137d3700362742f070b" style="width: 100.0%; height: 100.0%;">     Protocolo = 26415481-8<br>     Endereço = Praça XV, 96<br>     Ponto de referência = Próximo do monumento de Dom João VI<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_3695af650bc167283f3edcebd21e662a.setContent(html_e53c6ef9c7363137d3700362742f070b);
+            
+        
+
+        marker_a960c4516ba5089cc8432054a58fceaf.bindPopup(popup_3695af650bc167283f3edcebd21e662a)
+        ;
+
+        
+    
+    
+                marker_a960c4516ba5089cc8432054a58fceaf.setIcon(icon_f9aed54b38b5fa608db483dbe925805a);
+            
+    
+            var marker_bd615da032f54b189684aed73a9e44fe = L.marker(
+                [-22.9017615, -43.1778458],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_514e2722757e9e6f4f11d254ff02997b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6ba3f8474dc663b7274e0e38f2d5068 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_8e7f3bc441ce8717af0647b739ae80e8 = $(`<div id="html_8e7f3bc441ce8717af0647b739ae80e8" style="width: 100.0%; height: 100.0%;">     Protocolo = 26461182-4<br>     Endereço = Rua da Quitanda, 119<br>     Ponto de referência = esquina com rua da Alfândega. Na lateral do Centro Atendimento Secretaria Municipal de Habitação.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_b6ba3f8474dc663b7274e0e38f2d5068.setContent(html_8e7f3bc441ce8717af0647b739ae80e8);
+            
+        
+
+        marker_bd615da032f54b189684aed73a9e44fe.bindPopup(popup_b6ba3f8474dc663b7274e0e38f2d5068)
+        ;
+
+        
+    
+    
+                marker_bd615da032f54b189684aed73a9e44fe.setIcon(icon_514e2722757e9e6f4f11d254ff02997b);
+            
+    
+            var marker_cb424f902775d7e7af61ac2bde2f4770 = L.marker(
+                [-22.9019812, -43.1736858],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b75b7ca9090e2fc35ebbcc1851323b87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cecf7eebbae9062e95dffa79637b03fd = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_f2152b9ff9803f5f7f74f13e646505c3 = $(`<div id="html_f2152b9ff9803f5f7f74f13e646505c3" style="width: 100.0%; height: 100.0%;">     Protocolo = 26559492-0<br>     Endereço = Avenida Presidente Vargas, 309<br>     Ponto de referência = Esquina com Avenida Rio Branco. Em frente a Caixa Econômica.<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_cecf7eebbae9062e95dffa79637b03fd.setContent(html_f2152b9ff9803f5f7f74f13e646505c3);
+            
+        
+
+        marker_cb424f902775d7e7af61ac2bde2f4770.bindPopup(popup_cecf7eebbae9062e95dffa79637b03fd)
+        ;
+
+        
+    
+    
+                marker_cb424f902775d7e7af61ac2bde2f4770.setIcon(icon_b75b7ca9090e2fc35ebbcc1851323b87);
+            
+    
+            var marker_7d89e3aaaa1d8ab0adf975d3756229ae = L.marker(
+                [-22.9029883, -43.1773039],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_bb458ecd09282fa30dd84ab69bfbf4e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d6f1ea173faddb98570ee5ae29c7a47 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_03c1a29b9604d2d6db21f3ef3698ea83 = $(`<div id="html_03c1a29b9604d2d6db21f3ef3698ea83" style="width: 100.0%; height: 100.0%;">     Protocolo = 26559526-0<br>     Endereço = Rua da Quitanda, 81<br>     Ponto de referência = Na calçada da Drogaria Wilson <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_5d6f1ea173faddb98570ee5ae29c7a47.setContent(html_03c1a29b9604d2d6db21f3ef3698ea83);
+            
+        
+
+        marker_7d89e3aaaa1d8ab0adf975d3756229ae.bindPopup(popup_5d6f1ea173faddb98570ee5ae29c7a47)
+        ;
+
+        
+    
+    
+                marker_7d89e3aaaa1d8ab0adf975d3756229ae.setIcon(icon_bb458ecd09282fa30dd84ab69bfbf4e9);
+            
+    
+            var marker_e7e510cab1ff5ba02118c9f27c512416 = L.marker(
+                [-22.9125759, -43.1768585],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_0acdf2fe8f2b286436cc369f46a0d3ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eca6b0617f91685f6b0524b38ee33557 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c6b868cef07075a0d2dd5182250f949a = $(`<div id="html_c6b868cef07075a0d2dd5182250f949a" style="width: 100.0%; height: 100.0%;">     Protocolo = 26585762-0<br>     Endereço = Rua do Passeio,  s/n<br>     Ponto de referência = Esquina com Senador Dantas, próximo do estacionamento Cinelândia acesso Luís de Vasconcelos.<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_eca6b0617f91685f6b0524b38ee33557.setContent(html_c6b868cef07075a0d2dd5182250f949a);
+            
+        
+
+        marker_e7e510cab1ff5ba02118c9f27c512416.bindPopup(popup_eca6b0617f91685f6b0524b38ee33557)
+        ;
+
+        
+    
+    
+                marker_e7e510cab1ff5ba02118c9f27c512416.setIcon(icon_0acdf2fe8f2b286436cc369f46a0d3ce);
+            
+    
+            var marker_5a85320bc1242d6d6d3a252a023455ef = L.marker(
+                [-22.9046751, -43.1747353],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_55899517a88458be2843ecdab54d4b4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5c8a9d356c58159b0d55e9019a9d626e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_a2e77597177ba41ae6f796d61839b950 = $(`<div id="html_a2e77597177ba41ae6f796d61839b950" style="width: 100.0%; height: 100.0%;">     Protocolo = 26709227-0<br>     Endereço = Rua São José, 16<br>     Ponto de referência = Esquina Avenida Presidente Antônio Carlos. Próximo restaurante distak gourmet.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_5c8a9d356c58159b0d55e9019a9d626e.setContent(html_a2e77597177ba41ae6f796d61839b950);
+            
+        
+
+        marker_5a85320bc1242d6d6d3a252a023455ef.bindPopup(popup_5c8a9d356c58159b0d55e9019a9d626e)
+        ;
+
+        
+    
+    
+                marker_5a85320bc1242d6d6d3a252a023455ef.setIcon(icon_55899517a88458be2843ecdab54d4b4b);
+            
+    
+            var marker_56af54f7fd3a8269699f51eb89c44e51 = L.marker(
+                [-22.9100152, -43.2045694],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_8234c0b3157468a9fda74898a695f4a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_724a13bdaaad6c1207fa0b95de9fcb68 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_5bbe3dc641eb92c4a0ab62eb08650356 = $(`<div id="html_5bbe3dc641eb92c4a0ab62eb08650356" style="width: 100.0%; height: 100.0%;">     Protocolo = 27052373-8<br>     Endereço = Avenida Presidente Vargas, 3131<br>     Ponto de referência = Em frente ao Santander <br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_724a13bdaaad6c1207fa0b95de9fcb68.setContent(html_5bbe3dc641eb92c4a0ab62eb08650356);
+            
+        
+
+        marker_56af54f7fd3a8269699f51eb89c44e51.bindPopup(popup_724a13bdaaad6c1207fa0b95de9fcb68)
+        ;
+
+        
+    
+    
+                marker_56af54f7fd3a8269699f51eb89c44e51.setIcon(icon_8234c0b3157468a9fda74898a695f4a4);
+            
+    
+            var marker_d1ddb98f46f651037353b49dee275c91 = L.marker(
+                [-22.9000516, -43.1781377],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_0cc3ef1066782f0a12b0e468ca9ce742 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ffd9b8f9920931218e5c5ef62a63aa0 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_49dfd5acdd0303200e68afdcdbf86855 = $(`<div id="html_49dfd5acdd0303200e68afdcdbf86855" style="width: 100.0%; height: 100.0%;">     Protocolo = 27400855-0<br>     Endereço = Rua Teófilo Otoni, 55<br>     Ponto de referência = Esquina com rua da Candelária<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_7ffd9b8f9920931218e5c5ef62a63aa0.setContent(html_49dfd5acdd0303200e68afdcdbf86855);
+            
+        
+
+        marker_d1ddb98f46f651037353b49dee275c91.bindPopup(popup_7ffd9b8f9920931218e5c5ef62a63aa0)
+        ;
+
+        
+    
+    
+                marker_d1ddb98f46f651037353b49dee275c91.setIcon(icon_0cc3ef1066782f0a12b0e468ca9ce742);
+            
+    
+            var marker_34f628ff43a9e6e738b5e2c08f005d5a = L.marker(
+                [-22.9061452, -43.1776702],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_75e2d151d81bd658a14a9a4b0b17cdbe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e05d50b862b81a06573d309d12afd1a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_90c344136c0d3fd1ebbc19dd00eabc57 = $(`<div id="html_90c344136c0d3fd1ebbc19dd00eabc57" style="width: 100.0%; height: 100.0%;">     Protocolo = 27449474-8<br>     Endereço = Avenida Nilo Peçanha, 50<br>     Ponto de referência = Entre a banca de jornal e o ponto de ônibus<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_4e05d50b862b81a06573d309d12afd1a.setContent(html_90c344136c0d3fd1ebbc19dd00eabc57);
+            
+        
+
+        marker_34f628ff43a9e6e738b5e2c08f005d5a.bindPopup(popup_4e05d50b862b81a06573d309d12afd1a)
+        ;
+
+        
+    
+    
+                marker_34f628ff43a9e6e738b5e2c08f005d5a.setIcon(icon_75e2d151d81bd658a14a9a4b0b17cdbe);
+            
+    
+            var marker_40819c6b0b3bad64905561c2986b1268 = L.marker(
+                [-22.8999718, -43.1792374],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_dd6c5faaadc3f5e5b5da85792500d49f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e89af24b6ff0584bddd8646acc060b4 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_c005845d14ad386f2f8611b1d74d49bc = $(`<div id="html_c005845d14ad386f2f8611b1d74d49bc" style="width: 100.0%; height: 100.0%;">     Protocolo = 27488368-0<br>     Endereço = Rua Teófilo Otoni, 58<br>     Ponto de referência = Esquina com Silvio Antônio da Silva<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_2e89af24b6ff0584bddd8646acc060b4.setContent(html_c005845d14ad386f2f8611b1d74d49bc);
+            
+        
+
+        marker_40819c6b0b3bad64905561c2986b1268.bindPopup(popup_2e89af24b6ff0584bddd8646acc060b4)
+        ;
+
+        
+    
+    
+                marker_40819c6b0b3bad64905561c2986b1268.setIcon(icon_dd6c5faaadc3f5e5b5da85792500d49f);
+            
+    
+            var marker_242c0d9994eb2bf9067e93e7be334004 = L.marker(
+                [-22.8957388, -43.1866929],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_b4ccd7959922f5b6525bbfb8ab4aad85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42e1e3b13f68e1620430485ae0dcea4b = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_5a606d05a810aff9ef2109a4e1fd68c2 = $(`<div id="html_5a606d05a810aff9ef2109a4e1fd68c2" style="width: 100.0%; height: 100.0%;">     Protocolo = 27519434-0<br>     Endereço = Avenida Venezuela, s/n<br>     Ponto de referência = Avenida Venezuela logo após a esquina com Rua Silvino Montenegro<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_42e1e3b13f68e1620430485ae0dcea4b.setContent(html_5a606d05a810aff9ef2109a4e1fd68c2);
+            
+        
+
+        marker_242c0d9994eb2bf9067e93e7be334004.bindPopup(popup_42e1e3b13f68e1620430485ae0dcea4b)
+        ;
+
+        
+    
+    
+                marker_242c0d9994eb2bf9067e93e7be334004.setIcon(icon_b4ccd7959922f5b6525bbfb8ab4aad85);
+            
+    
+            var marker_270701a49be444454d61b43cc75811a6 = L.marker(
+                [-22.9013614, -43.1772288],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_8cd0b7c01264a14df160ba6b961fa245 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63c043b943b62584b20fad2c272a9549 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_78a38cab0d181857ce08210c34597e55 = $(`<div id="html_78a38cab0d181857ce08210c34597e55" style="width: 100.0%; height: 100.0%;">     Protocolo = 27653827-0<br>     Endereço = Praça Pio X, 55<br>     Ponto de referência = Esquina com Candelária. Próximo do edifício Visconde de Cayru<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_63c043b943b62584b20fad2c272a9549.setContent(html_78a38cab0d181857ce08210c34597e55);
+            
+        
+
+        marker_270701a49be444454d61b43cc75811a6.bindPopup(popup_63c043b943b62584b20fad2c272a9549)
+        ;
+
+        
+    
+    
+                marker_270701a49be444454d61b43cc75811a6.setIcon(icon_8cd0b7c01264a14df160ba6b961fa245);
+            
+    
+            var marker_9cdfa7eaa3fca3422ae900da78bf6276 = L.marker(
+                [-22.9045753, -43.1773776],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_60715bf694c6f4135a43e69d2d21e085 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_436ac6fae71b4a683bd979df08048d2f = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_4c993a01f119f0a00e5c716393310889 = $(`<div id="html_4c993a01f119f0a00e5c716393310889" style="width: 100.0%; height: 100.0%;">     Protocolo = 27918532-0<br>     Endereço = Avenida Rio Branco, 135<br>     Ponto de referência = Em frente à loja Di Santinni<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_436ac6fae71b4a683bd979df08048d2f.setContent(html_4c993a01f119f0a00e5c716393310889);
+            
+        
+
+        marker_9cdfa7eaa3fca3422ae900da78bf6276.bindPopup(popup_436ac6fae71b4a683bd979df08048d2f)
+        ;
+
+        
+    
+    
+                marker_9cdfa7eaa3fca3422ae900da78bf6276.setIcon(icon_60715bf694c6f4135a43e69d2d21e085);
+            
+    
+            var marker_fe3fbb10c46aabf42671dc8b05ad907e = L.marker(
+                [-22.9040771, -43.1766438],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_7f5eeb880c5103d3d162fcd0df9a1e6e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c1e82e4b865c9a92aff3fd1541b9fed = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_0b8f2925c8938bace03ac5c07f988898 = $(`<div id="html_0b8f2925c8938bace03ac5c07f988898" style="width: 100.0%; height: 100.0%;">     Protocolo = 28698536-6<br>     Endereço = Rua da Quitanda, 43<br>     Ponto de referência = Esquina com Sete de Setembro. Em frente à loja sacada.<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_6c1e82e4b865c9a92aff3fd1541b9fed.setContent(html_0b8f2925c8938bace03ac5c07f988898);
+            
+        
+
+        marker_fe3fbb10c46aabf42671dc8b05ad907e.bindPopup(popup_6c1e82e4b865c9a92aff3fd1541b9fed)
+        ;
+
+        
+    
+    
+                marker_fe3fbb10c46aabf42671dc8b05ad907e.setIcon(icon_7f5eeb880c5103d3d162fcd0df9a1e6e);
+            
+    
+            var marker_2f216d9313a6b6062b467efd0ac7dce5 = L.marker(
+                [-22.8999162, -43.1773263],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_03468bc799df1394b6122052d19f82b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e297da0eb6dad80b2449c5844f6fb40 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_007abaf5104f360e657602b27abb7297 = $(`<div id="html_007abaf5104f360e657602b27abb7297" style="width: 100.0%; height: 100.0%;">     Protocolo = 28845624-5<br>     Endereço = Rua da Rua da Candelária, 66<br>     Ponto de referência = Próximo da Pio X<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_6e297da0eb6dad80b2449c5844f6fb40.setContent(html_007abaf5104f360e657602b27abb7297);
+            
+        
+
+        marker_2f216d9313a6b6062b467efd0ac7dce5.bindPopup(popup_6e297da0eb6dad80b2449c5844f6fb40)
+        ;
+
+        
+    
+    
+                marker_2f216d9313a6b6062b467efd0ac7dce5.setIcon(icon_03468bc799df1394b6122052d19f82b2);
+            
+    
+            var marker_53f4d869a9f369f2ebc08fb6d6e6526c = L.marker(
+                [-22.9044939, -43.1743226],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_f7905fb8017dda12bff1f142731c3c1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d49a2505fc7782cc8d2cfbd9ad9bde3d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_bf5c15b64e75066d828ce12866d163dd = $(`<div id="html_bf5c15b64e75066d828ce12866d163dd" style="width: 100.0%; height: 100.0%;">     Protocolo = 28871551-0<br>     Endereço = Avenida Presidente Antônio Carlos, 0<br>     Ponto de referência = Esquina com rua São José, 8<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_d49a2505fc7782cc8d2cfbd9ad9bde3d.setContent(html_bf5c15b64e75066d828ce12866d163dd);
+            
+        
+
+        marker_53f4d869a9f369f2ebc08fb6d6e6526c.bindPopup(popup_d49a2505fc7782cc8d2cfbd9ad9bde3d)
+        ;
+
+        
+    
+    
+                marker_53f4d869a9f369f2ebc08fb6d6e6526c.setIcon(icon_f7905fb8017dda12bff1f142731c3c1f);
+            
+    
+            var marker_929e1d8f44726d9bd93e3b01ec7a1564 = L.marker(
+                [-22.8983142, -43.1785805],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_676d1f67000885192db0dbbe0faee8a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba1699aca551a00cdfc083732baed12c = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_547304b607dd5cf744b923723f807017 = $(`<div id="html_547304b607dd5cf744b923723f807017" style="width: 100.0%; height: 100.0%;">     Protocolo = 29030572-8<br>     Endereço = Cortine Laxe, 9<br>     Ponto de referência = Em frente a Garagem São Bento<br>     Região = 1<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_ba1699aca551a00cdfc083732baed12c.setContent(html_547304b607dd5cf744b923723f807017);
+            
+        
+
+        marker_929e1d8f44726d9bd93e3b01ec7a1564.bindPopup(popup_ba1699aca551a00cdfc083732baed12c)
+        ;
+
+        
+    
+    
+                marker_929e1d8f44726d9bd93e3b01ec7a1564.setIcon(icon_676d1f67000885192db0dbbe0faee8a4);
+            
+    
+            var marker_2739a9daf5e8e95ff34fed39b1c3d6d9 = L.marker(
+                [-22.9037086, -43.1770432],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_839067458a856180f039baf795e99105 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df91afc57273ae7290e32fdb1ea88e7a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2621bfd6f145bc38b0f2076e5517ef99 = $(`<div id="html_2621bfd6f145bc38b0f2076e5517ef99" style="width: 100.0%; height: 100.0%;">     Protocolo = 29034464-4<br>     Endereço = Rua da Quitanda, 59<br>     Ponto de referência = Em frente à Caixa Econômica<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_df91afc57273ae7290e32fdb1ea88e7a.setContent(html_2621bfd6f145bc38b0f2076e5517ef99);
+            
+        
+
+        marker_2739a9daf5e8e95ff34fed39b1c3d6d9.bindPopup(popup_df91afc57273ae7290e32fdb1ea88e7a)
+        ;
+
+        
+    
+    
+                marker_2739a9daf5e8e95ff34fed39b1c3d6d9.setIcon(icon_839067458a856180f039baf795e99105);
+            
+    
+            var marker_82a476271f21088d6be8fda9ac72acea = L.marker(
+                [-22.9037086, -43.1770432],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_94fe1d6211a189f8e137bccfc78cdbd5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ab7448e234bbcc2443d14c47adc4fe6 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_0becb5562a14ee54d944d9ec38645e08 = $(`<div id="html_0becb5562a14ee54d944d9ec38645e08" style="width: 100.0%; height: 100.0%;">     Protocolo = 29100309-0<br>     Endereço = Rua da Quitanda, 59<br>     Ponto de referência = Em frente a Caixa Econômica<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_8ab7448e234bbcc2443d14c47adc4fe6.setContent(html_0becb5562a14ee54d944d9ec38645e08);
+            
+        
+
+        marker_82a476271f21088d6be8fda9ac72acea.bindPopup(popup_8ab7448e234bbcc2443d14c47adc4fe6)
+        ;
+
+        
+    
+    
+                marker_82a476271f21088d6be8fda9ac72acea.setIcon(icon_94fe1d6211a189f8e137bccfc78cdbd5);
+            
+    
+            var marker_716cb7d3d1c68e0eeebe391bd01bddaa = L.marker(
+                [-22.9044152, -43.1755798],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_6e35028f44bbfa7506121ddc13d54b57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bacdf65d1a1fb6ad8779b240c29d7d3e = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_aa355a259bac9fad10947033587b3a3e = $(`<div id="html_aa355a259bac9fad10947033587b3a3e" style="width: 100.0%; height: 100.0%;">     Protocolo = 29230148-6<br>     Endereço = Rua do Carmo, 11<br>     Ponto de referência = Ocorrência localizada na lateral do prédio na rua do Carmo<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_bacdf65d1a1fb6ad8779b240c29d7d3e.setContent(html_aa355a259bac9fad10947033587b3a3e);
+            
+        
+
+        marker_716cb7d3d1c68e0eeebe391bd01bddaa.bindPopup(popup_bacdf65d1a1fb6ad8779b240c29d7d3e)
+        ;
+
+        
+    
+    
+                marker_716cb7d3d1c68e0eeebe391bd01bddaa.setIcon(icon_6e35028f44bbfa7506121ddc13d54b57);
+            
+    
+            var marker_e4a7fcd75d8e6d696c998fd0e874e9ef = L.marker(
+                [-22.9039385, -43.1745191],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_145187a9f447a425530f268453df530e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2557348261b4819b5dfb47d3392d0833 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_d1b32ef7cfafbee0708612f220c80e14 = $(`<div id="html_d1b32ef7cfafbee0708612f220c80e14" style="width: 100.0%; height: 100.0%;">     Protocolo = 29262839-2<br>     Endereço = Largo do Paço, 48<br>     Ponto de referência = Fundos do Paço Imperial<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_2557348261b4819b5dfb47d3392d0833.setContent(html_d1b32ef7cfafbee0708612f220c80e14);
+            
+        
+
+        marker_e4a7fcd75d8e6d696c998fd0e874e9ef.bindPopup(popup_2557348261b4819b5dfb47d3392d0833)
+        ;
+
+        
+    
+    
+                marker_e4a7fcd75d8e6d696c998fd0e874e9ef.setIcon(icon_145187a9f447a425530f268453df530e);
+            
+    
+            var marker_de573c51bad1dcf22a5e19254fd6623c = L.marker(
+                [-22.9039385, -43.1745191],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_45a25a45a152ad463849c5f99364d4c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7229271e5cba1c852d25ef0913f0a1d9 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_72277595cb6bb70d455e1bacc71ab7e4 = $(`<div id="html_72277595cb6bb70d455e1bacc71ab7e4" style="width: 100.0%; height: 100.0%;">     Protocolo = 29365173-6<br>     Endereço = Largo do Paço, 48<br>     Ponto de referência = De frente para rua da Assembleia <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_7229271e5cba1c852d25ef0913f0a1d9.setContent(html_72277595cb6bb70d455e1bacc71ab7e4);
+            
+        
+
+        marker_de573c51bad1dcf22a5e19254fd6623c.bindPopup(popup_7229271e5cba1c852d25ef0913f0a1d9)
+        ;
+
+        
+    
+    
+                marker_de573c51bad1dcf22a5e19254fd6623c.setIcon(icon_45a25a45a152ad463849c5f99364d4c1);
+            
+    
+            var marker_074fe2d40b99024a2979712f674b4647 = L.marker(
+                [-22.9034473, -43.1760329],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_7204f4eee23312a2a29a6775338bcb1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27b4ff27efe913e43165fb354703cd67 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_3acd9c7c8f37078720eb44bba9111545 = $(`<div id="html_3acd9c7c8f37078720eb44bba9111545" style="width: 100.0%; height: 100.0%;">     Protocolo = 29494017-0<br>     Endereço = Rua do Carmo, 48<br>     Ponto de referência = esquina com Sete de Setembro<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_27b4ff27efe913e43165fb354703cd67.setContent(html_3acd9c7c8f37078720eb44bba9111545);
+            
+        
+
+        marker_074fe2d40b99024a2979712f674b4647.bindPopup(popup_27b4ff27efe913e43165fb354703cd67)
+        ;
+
+        
+    
+    
+                marker_074fe2d40b99024a2979712f674b4647.setIcon(icon_7204f4eee23312a2a29a6775338bcb1c);
+            
+    
+            var marker_98fbaca57557f63f145a9e58c0e786d3 = L.marker(
+                [-22.9050968, -43.1750709],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_0fd80ca38acb6c55e98974382879b812 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ae55cdb8eaeed59192f567ff46f5f8a = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_b9b8b10faa14f4fa0652108b885adac1 = $(`<div id="html_b9b8b10faa14f4fa0652108b885adac1" style="width: 100.0%; height: 100.0%;">     Protocolo = 29519846-0<br>     Endereço = São José, 35<br>     Ponto de referência = Do lado da bagaggio, esquina com Praça Mário Lago<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_6ae55cdb8eaeed59192f567ff46f5f8a.setContent(html_b9b8b10faa14f4fa0652108b885adac1);
+            
+        
+
+        marker_98fbaca57557f63f145a9e58c0e786d3.bindPopup(popup_6ae55cdb8eaeed59192f567ff46f5f8a)
+        ;
+
+        
+    
+    
+                marker_98fbaca57557f63f145a9e58c0e786d3.setIcon(icon_0fd80ca38acb6c55e98974382879b812);
+            
+    
+            var marker_46e5dd46cff15fb23c6f70531d1057d8 = L.marker(
+                [-22.9034473, -43.1760329],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_84ff9c668abb25ac2e8893bc21d18c41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e8ad943a4859b10dc1e40ad00960e01d = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_2ec17fb61c47864091ee1dc0b503ea36 = $(`<div id="html_2ec17fb61c47864091ee1dc0b503ea36" style="width: 100.0%; height: 100.0%;">     Protocolo = 29593334-0<br>     Endereço = Rua do Carmo, 48<br>     Ponto de referência = Esquina com Sete de Setembro <br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e8ad943a4859b10dc1e40ad00960e01d.setContent(html_2ec17fb61c47864091ee1dc0b503ea36);
+            
+        
+
+        marker_46e5dd46cff15fb23c6f70531d1057d8.bindPopup(popup_e8ad943a4859b10dc1e40ad00960e01d)
+        ;
+
+        
+    
+    
+                marker_46e5dd46cff15fb23c6f70531d1057d8.setIcon(icon_84ff9c668abb25ac2e8893bc21d18c41);
+            
+    
+            var marker_52202785994872f4126013a8842cb792 = L.marker(
+                [-22.9050968, -43.1750709],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_3ec03a8b65eaf7ee7db071bd405bbae6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_41986eac96af49c2900c3c796a7c9e37 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_32ccbf9d5ca751bd5df90589f5974996 = $(`<div id="html_32ccbf9d5ca751bd5df90589f5974996" style="width: 100.0%; height: 100.0%;">     Protocolo = 29627133-0<br>     Endereço = Rua São José, 35<br>     Ponto de referência = Esquina com Avenida Presidente Antônio Carlos. Na saída de carros do Edifício Garagem - Menezes Cortes.<br>     Região = 2<br>     Status 1 = Em andamento<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_41986eac96af49c2900c3c796a7c9e37.setContent(html_32ccbf9d5ca751bd5df90589f5974996);
+            
+        
+
+        marker_52202785994872f4126013a8842cb792.bindPopup(popup_41986eac96af49c2900c3c796a7c9e37)
+        ;
+
+        
+    
+    
+                marker_52202785994872f4126013a8842cb792.setIcon(icon_3ec03a8b65eaf7ee7db071bd405bbae6);
+            
+    
+            var marker_64e11cd272e40ca7d7ee30e6bebc5832 = L.marker(
+                [-22.9021837, -43.1785422],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_539cc0de8c3a5a02b428332b7f41c633 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcc6382638f169118ea197a8347bd7eb = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_90743cc10d3cd2cf2e544cf04cc6c46a = $(`<div id="html_90743cc10d3cd2cf2e544cf04cc6c46a" style="width: 100.0%; height: 100.0%;">     Protocolo = 29733822-6<br>     Endereço = Avenida Rio Branco, 89<br>     Ponto de referência = Esquina com Rua da Alfândega<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_fcc6382638f169118ea197a8347bd7eb.setContent(html_90743cc10d3cd2cf2e544cf04cc6c46a);
+            
+        
+
+        marker_64e11cd272e40ca7d7ee30e6bebc5832.bindPopup(popup_fcc6382638f169118ea197a8347bd7eb)
+        ;
+
+        
+    
+    
+                marker_64e11cd272e40ca7d7ee30e6bebc5832.setIcon(icon_539cc0de8c3a5a02b428332b7f41c633);
+            
+    
+            var marker_e89c54d2874a664522d4b78f605751a3 = L.marker(
+                [-22.9090499, -43.1700929],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_84b705b12f868af9e7dc89d0c79c73de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f975bf0f408b311f06ff7a4436053c50 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_6cfd8234bb685f9c9cb6a93eda626b95 = $(`<div id="html_6cfd8234bb685f9c9cb6a93eda626b95" style="width: 100.0%; height: 100.0%;">     Protocolo = 30026851-4<br>     Endereço = Avenida Marechal Câmara, 171<br>     Ponto de referência = Esquina com Avenida Churchill<br>     Região = 3<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_f975bf0f408b311f06ff7a4436053c50.setContent(html_6cfd8234bb685f9c9cb6a93eda626b95);
+            
+        
+
+        marker_e89c54d2874a664522d4b78f605751a3.bindPopup(popup_f975bf0f408b311f06ff7a4436053c50)
+        ;
+
+        
+    
+    
+                marker_e89c54d2874a664522d4b78f605751a3.setIcon(icon_84b705b12f868af9e7dc89d0c79c73de);
+            
+    
+            var marker_c2b48410ecd180f1ab4d1efc78295105 = L.marker(
+                [-22.9042323, -43.1752459],
+                {
+}
+            ).addTo(marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe);
+        
+    
+            var icon_dc0536a98fc53612b4323fbf1477c9c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e4c6705fbfce689bf8cee7f59baba173 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 300,
+});
+
+        
+            
+                var html_dccd856d4dbcc1ed37fa4d61177d4cc8 = $(`<div id="html_dccd856d4dbcc1ed37fa4d61177d4cc8" style="width: 100.0%; height: 100.0%;">     Protocolo = 30176589-5<br>     Endereço = Rua da Assembleia, 10<br>     Ponto de referência = Esquina com Avenida Presidente Antônio Carlos<br>     Região = 2<br>     Status 1 = Fechado<br>     Parecer = SOLUCIONADO<br>     Status 2 = -<br>     </div>`)[0];
+                popup_e4c6705fbfce689bf8cee7f59baba173.setContent(html_dccd856d4dbcc1ed37fa4d61177d4cc8);
+            
+        
+
+        marker_c2b48410ecd180f1ab4d1efc78295105.bindPopup(popup_e4c6705fbfce689bf8cee7f59baba173)
+        ;
+
+        
+    
+    
+                marker_c2b48410ecd180f1ab4d1efc78295105.setIcon(icon_dc0536a98fc53612b4323fbf1477c9c0);
+            
+    
+            marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe.addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+        
+    
+            var marker_cluster_6542d84d1f1e4b53944b3f7fe47fd471 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            marker_cluster_6542d84d1f1e4b53944b3f7fe47fd471.addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+        
+    
+            var marker_cluster_f9cb85a63000ed09dc6257da498515f8 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            marker_cluster_f9cb85a63000ed09dc6257da498515f8.addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+        
+    
+            var layer_control_4ec315dc4f0f8818aef00a54b3dca242_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_74399bc6ae5261c18f7bbf2e727bf615,
+                },
+                overlays :  {
+                    "Em andamento" : marker_cluster_1093e3c9689a880214baeca989e97bc0,
+                    "Solucionado" : marker_cluster_c9aadcbc7d2350cd9be40894ff07a6fe,
+                    "Fechado" : marker_cluster_6542d84d1f1e4b53944b3f7fe47fd471,
+                    "Redirecionado" : marker_cluster_f9cb85a63000ed09dc6257da498515f8,
+                },
+            };
+            let layer_control_4ec315dc4f0f8818aef00a54b3dca242 = L.control.layers(
+                layer_control_4ec315dc4f0f8818aef00a54b3dca242_layers.base_layers,
+                layer_control_4ec315dc4f0f8818aef00a54b3dca242_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_07c9fa41ef1dbd8316cf8bb22ecb0c51);
+
+        
+</script>
+</html>
